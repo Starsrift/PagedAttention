@@ -285,4 +285,3 @@ jupyter notebook PagedAttention_Tutorial.ipynb
 
 ---
 
-*Built as an educational companion for a Substack/Medium technical post on LLM serving infrastructure.*
