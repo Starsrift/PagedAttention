@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PagedAttention Simulator - vLLM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: { 500: '#10b981', 600: '#059669' },
+                        indigo: { 500: '#6366f1', 600: '#4f46e5' },
+                        violet: { 500: '#8b5cf6', 600: '#7c3aed' },
+                        amber: { 500: '#f59e0b', 600: '#d97706' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f8fafc; color: #1e293b; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        .block-pulse { animation: pulse-border 1.5s infinite; }
+        @keyframes pulse-border {
+            0% { border-color: rgba(16, 185, 129, 0.5); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            70% { border-color: rgba(16, 185, 129, 1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { border-color: rgba(16, 185, 129, 0.5); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        
+        .cow-flash { animation: flash-bg 1s ease-out; }
+        @keyframes flash-bg {
+            0% { background-color: rgba(139, 92, 246, 0.2); transform: scale(1.05); }
+            100% { background-color: transparent; transform: scale(1); }
+        }
+
+        .stripe-bg {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(239, 68, 68, 0.1) 2px, rgba(239, 68, 68, 0.1) 4px);
+        }
+    </style>
+</head>
+<body class="h-screen flex flex-col overflow-hidden p-4 space-y-4">
+
+  <!-- Panel A: Control HUD -->
+  <header class="bg-white rounded-xl p-4 shadow-sm border border-slate-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 shrink-0 z-30">
+    <div class="flex gap-2 bg-slate-100 p-1 rounded-lg border border-slate-200">
+       <button id="mode-single" class="px-4 py-2 rounded-md bg-emerald-100 text-emerald-700 font-bold text-sm transition-colors shadow-sm">Single Generation</button>
+       <button id="mode-parallel" class="px-4 py-2 rounded-md hover:bg-white hover:shadow-sm text-slate-600 font-medium text-sm transition-colors">Parallel Sampling</button>
+       <button id="mode-beam" class="px-4 py-2 rounded-md hover:bg-white hover:shadow-sm text-slate-600 font-medium text-sm transition-colors">Beam Search</button>
+    </div>
+    
+    <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2" title="Fixed at B=4 for this narrative simulation">
+            <span class="text-xs text-slate-500 font-medium">Block Size (B): <span class="text-slate-800 font-bold">4</span></span>
+            <input type="range" min="2" max="4" value="4" class="w-16 opacity-50 cursor-not-allowed" disabled>
+        </div>
+        <div class="flex items-center gap-2">
+            <i data-lucide="gauge" class="w-4 h-4 text-slate-500"></i>
+            <span class="text-xs text-slate-500 font-medium">Speed:</span>
+            <input type="range" id="speed" min="1" max="10" value="5" class="w-20">
+        </div>
+    </div>
+
+    <div class="flex items-center gap-2">
+       <button id="btn-step" class="flex items-center justify-center gap-1 bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 px-3 py-1.5 rounded text-sm transition-colors w-24 shadow-sm font-medium">
+           <i data-lucide="step-forward" class="w-4 h-4"></i> Step
+       </button>
+       <button id="btn-play" class="flex items-center justify-center gap-1 bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded text-sm transition-colors w-28 shadow-sm font-medium">
+           <i data-lucide="play" class="w-4 h-4"></i> Auto Run
+       </button>
+       <button id="btn-reset" class="flex items-center justify-center gap-1 bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 px-3 py-1.5 rounded text-sm transition-colors w-24 shadow-sm font-medium">
+           <i data-lucide="rotate-ccw" class="w-4 h-4"></i> Reset
+       </button>
+       <button id="btn-preempt" class="flex items-center justify-center gap-1 bg-amber-500 hover:bg-amber-400 text-white px-3 py-1.5 rounded text-sm transition-colors w-28 ml-2 shadow-sm font-medium">
+           <i data-lucide="cpu" class="w-4 h-4"></i> Preempt
+       </button>
+    </div>
+  </header>
+
+  <!-- Narrative Subtitle (Helper Text) -->
+  <div class="bg-indigo-50/80 backdrop-blur-sm border border-indigo-200 rounded-lg p-3 shadow-sm shrink-0 z-30 text-center relative overflow-hidden transition-all duration-300 transform">
+      <div class="absolute left-0 top-0 bottom-0 w-1 bg-indigo-500 rounded-l-lg"></div>
+      <div class="font-sans text-sm md:text-base text-indigo-900 font-bold flex items-center justify-center gap-2">
+          <i data-lucide="info" class="w-5 h-5 text-indigo-600 animate-pulse"></i>
+          <span id="log-text">System initialized. Ready to begin allocation.</span>
+      </div>
+  </div>
+
+  <div class="flex-1 flex gap-4 min-h-0 relative z-20">
+     
+     <!-- Panel B: The Old Way (Contiguous) -->
+     <div class="w-1/4 bg-white rounded-xl p-4 shadow-sm border border-slate-200 flex flex-col z-20 relative">
+         <h2 class="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2">
+             <i data-lucide="alert-triangle" class="text-amber-500 w-4 h-4"></i> Contiguous Allocation
+         </h2>
+         <div class="flex-1 overflow-y-auto pr-2 space-y-4" id="old-way-container">
+            <!-- Rendered by JS -->
+         </div>
+         <div class="mt-4 p-3 bg-slate-50 rounded-lg border border-red-100 shrink-0">
+             <div class="text-xs text-slate-500 mb-1 font-medium">Internal Fragmentation</div>
+             <div class="text-2xl font-black text-red-500 flex items-center justify-between">
+                 <span id="old-waste-counter">0%</span>
+                 <i data-lucide="trash-2" class="w-5 h-5 opacity-40"></i>
+             </div>
+             <div class="text-[10px] text-slate-500 mt-1">Pre-allocated max sequence length (16) wastes GPU memory.</div>
+         </div>
+     </div>
+
+     <!-- Panel C: PagedAttention -->
+     <div class="flex-1 bg-white rounded-xl p-4 shadow-sm border border-slate-200 flex flex-col relative">
+         <svg id="mapping-svg" class="absolute inset-0 w-full h-full pointer-events-none z-0"></svg>
+         
+         <h2 class="text-sm font-bold text-emerald-600 mb-4 flex items-center gap-2 shrink-0 z-20">
+             <i data-lucide="zap" class="w-4 h-4"></i> PagedAttention
+         </h2>
+         
+         <div class="flex-1 flex gap-6 overflow-hidden relative">
+             
+             <!-- Logical Sequence -->
+             <div class="w-1/3 flex flex-col z-10">
+                 <h3 class="text-[11px] font-bold text-slate-400 mb-3 uppercase tracking-wider">Logical Blocks</h3>
+                 <div id="logical-blocks" class="space-y-4 overflow-y-auto flex-1 pr-2 pb-4"></div>
+             </div>
+
+             <!-- Block Table -->
+             <div class="w-1/3 flex flex-col z-10" id="block-table-container">
+                 <h3 class="text-[11px] font-bold text-slate-400 mb-3 uppercase tracking-wider">Block Table</h3>
+                 <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-y-auto shadow-inner flex-1 max-h-full pb-2 relative">
+                     <table class="w-full text-left text-xs sticky top-0 bg-slate-50 z-10">
+                         <thead class="bg-slate-100 text-slate-600 shadow-sm border-b border-slate-200">
+                             <tr>
+                                 <th class="p-2 font-bold">Logical</th>
+                                 <th class="p-2 font-bold">Physical</th>
+                                 <th class="p-2 font-bold">Filled</th>
+                                 <th class="p-2 font-bold">Refs</th>
+                             </tr>
+                         </thead>
+                         <tbody id="block-table-body" class="divide-y divide-slate-200/60 font-mono text-slate-700 relative">
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+
+             <!-- Physical GPU DRAM / CPU Swap -->
+             <div class="w-1/3 flex flex-col z-10 pr-2 overflow-y-auto" id="physical-column">
+                 <div class="flex-none flex flex-col">
+                     <h3 class="text-[11px] font-bold text-slate-400 mb-2 uppercase tracking-wider" id="gpu-title">GPU DRAM Pool</h3>
+                     <div id="physical-blocks" class="grid grid-cols-4 gap-1.5 content-start pt-2 pb-2"></div>
+                 </div>
+                 
+                 <div class="h-px bg-slate-200 w-full my-2 shrink-0"></div>
+                 
+                 <div class="flex-none flex flex-col opacity-90">
+                     <h3 class="text-[11px] font-bold text-amber-500 mb-2 uppercase tracking-wider">CPU Swap Space</h3>
+                     <div id="cpu-blocks" class="grid grid-cols-4 gap-1.5 content-start opacity-30 transition-opacity duration-300 pt-2 pb-6"></div>
+                 </div>
+             </div>
+         </div>
+     </div>
+  </div>
+
+  <!-- Panel D: Real-Time Performance Analytics -->
+  <div class="bg-white rounded-xl p-4 shadow-sm border border-slate-200 flex gap-8 shrink-0 z-30">
+      <div class="flex-1 flex flex-col justify-center">
+          <div class="flex justify-between text-xs text-slate-500 font-medium mb-2">
+              <span>Effective Memory Utilization (Old Way)</span>
+              <span id="metric-util-old" class="font-bold text-red-500">25%</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-2 shadow-inner border border-slate-200">
+              <div id="bar-util-old" class="bg-red-500 h-2 rounded-full transition-all duration-500 -mt-px -ml-px" style="width: 25%"></div>
+          </div>
+      </div>
+      <div class="flex-1 flex flex-col justify-center">
+          <div class="flex justify-between text-xs text-slate-500 font-medium mb-2">
+              <span>Effective Memory Utilization (PagedAttention)</span>
+              <span id="metric-util-new" class="font-bold text-emerald-600">96%</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-2 shadow-inner border border-slate-200">
+              <div id="bar-util-new" class="bg-emerald-500 h-2 rounded-full transition-all duration-500 shadow-[0_0_10px_rgba(16,185,129,0.3)] -mt-px -ml-px" style="width: 96%"></div>
+          </div>
+      </div>
+      <div class="flex-shrink-0 border-l border-slate-200 pl-8 flex flex-col justify-center">
+          <div class="text-xs text-slate-500 font-medium mb-1">Batching Capacity Multiplier</div>
+          <div class="text-3xl font-black text-indigo-600 flex items-center gap-2">
+              <i data-lucide="rocket" class="w-6 h-6"></i>
+              <span id="metric-batch">1.0x</span>
+          </div>
+      </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+    
+    // Light Mode optimized colors
+    const hexColors = { 'Req-1': '#059669', 'Req-2': '#4f46e5', 'Req-3': '#7c3aed', 'Req-4': '#d97706' }; 
+    
+    const SIM_DATA = {
+        single: [
+            {
+                log: "Prefill phase: 'Four score and seven years' (5 tokens). Allocating 2 logical blocks.",
+                reqs: [{ id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years"]}] }],
+                cow: [], highlight: [7, 3], oldWaste: 68, oldUtil: 31, newUtil: 96, batch: '1.0x'
+            },
+            {
+                log: "Step 1: Generate 'ago'. Fits into Logical Block 1 (now 2/4 filled).",
+                reqs: [{ id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago"]}] }],
+                cow: [], highlight: [3], oldWaste: 62, oldUtil: 37, newUtil: 96, batch: '1.0x'
+            },
+            {
+                log: "Step 2: Generate 'our'. Fits into Logical Block 1 (now 3/4 filled).",
+                reqs: [{ id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our"]}] }],
+                cow: [], highlight: [3], oldWaste: 56, oldUtil: 43, newUtil: 96, batch: '1.0x'
+            },
+            {
+                log: "Step 3: Generate 'fathers'. Fits into Logical Block 1 (now 4/4 filled). Block is full.",
+                reqs: [{ id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our","fathers"]}] }],
+                cow: [], highlight: [3], oldWaste: 50, oldUtil: 50, newUtil: 97, batch: '1.0x'
+            },
+            {
+                log: "Step 4: Generate 'brought'. Logical Block 1 is full. Allocating new Physical Block 11 for Logical Block 2.",
+                reqs: [{ id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our","fathers"]}, {l:2, p:11, t:["brought"]}] }],
+                cow: [], highlight: [11], oldWaste: 43, oldUtil: 56, newUtil: 95, batch: '1.0x'
+            },
+            {
+                log: "Step 5: Generate 'forth'. Fits into Logical Block 2 (now 2/4 filled).",
+                reqs: [{ id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our","fathers"]}, {l:2, p:11, t:["brought","forth"]}] }],
+                cow: [], highlight: [11], oldWaste: 37, oldUtil: 62, newUtil: 95, batch: '1.0x'
+            },
+            {
+                log: "Step 6: Generate 'a'. Fits into Logical Block 2 (now 3/4 filled).",
+                reqs: [{ id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our","fathers"]}, {l:2, p:11, t:["brought","forth","a"]}] }],
+                cow: [], highlight: [11], oldWaste: 31, oldUtil: 68, newUtil: 95, batch: '1.0x'
+            },
+            {
+                log: "Step 7: Generate 'new'. Fits into Logical Block 2 (now 4/4 filled).",
+                reqs: [{ id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our","fathers"]}, {l:2, p:11, t:["brought","forth","a","new"]}] }],
+                cow: [], highlight: [11], oldWaste: 25, oldUtil: 75, newUtil: 98, batch: '1.0x'
+            },
+            {
+                log: "Step 8: Generate 'nation'. Logical Block 2 full. Allocating Physical Block 2 for Logical Block 3.",
+                reqs: [{ id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our","fathers"]}, {l:2, p:11, t:["brought","forth","a","new"]}, {l:3, p:2, t:["nation"]}] }],
+                cow: [], highlight: [2], oldWaste: 18, oldUtil: 81, newUtil: 96, batch: '1.0x'
+            }
+        ],
+        parallel: [
+            {
+                log: "Parallel Sampling activated. Forking sequence. Physical Blocks 7 and 3 now have Ref Count = 2.",
+                reqs: [
+                    { id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our"]}] },
+                    { id: 'Req-2', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our"]}] }
+                ],
+                cow: [], highlight: [7, 3], oldWaste: 75, oldUtil: 25, newUtil: 98, batch: '2.4x'
+            },
+            {
+                log: "Sample A generates 'brought'. Block 3 is shared, triggering Copy-on-Write! Allocating Physical Block 12.",
+                reqs: [
+                    { id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:12, t:["years","ago","our","brought"]}] },
+                    { id: 'Req-2', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our"]}] }
+                ],
+                cow: [3, 12], highlight: [12], oldWaste: 71, oldUtil: 28, newUtil: 97, batch: '2.4x'
+            },
+            {
+                log: "Sample B generates 'conceived'. Physical Block 3 is no longer shared, appending directly.",
+                reqs: [
+                    { id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:12, t:["years","ago","our","brought"]}] },
+                    { id: 'Req-2', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our","conceived"]}] }
+                ],
+                cow: [], highlight: [3], oldWaste: 68, oldUtil: 31, newUtil: 98, batch: '2.4x'
+            },
+            {
+                log: "Sample A generates 'forth'. Allocates Physical Block 11 for Logical Block 2.",
+                reqs: [
+                    { id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:12, t:["years","ago","our","brought"]}, {l:2, p:11, t:["forth"]}] },
+                    { id: 'Req-2', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our","conceived"]}] }
+                ],
+                cow: [], highlight: [11], oldWaste: 65, oldUtil: 34, newUtil: 96, batch: '2.4x'
+            },
+            {
+                log: "Sample B generates 'in'. Allocates Physical Block 5 for Logical Block 2.",
+                reqs: [
+                    { id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:12, t:["years","ago","our","brought"]}, {l:2, p:11, t:["forth"]}] },
+                    { id: 'Req-2', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our","conceived"]}, {l:2, p:5, t:["in"]}] }
+                ],
+                cow: [], highlight: [5], oldWaste: 62, oldUtil: 37, newUtil: 95, batch: '2.4x'
+            }
+        ],
+        beam: [
+            {
+                log: "Beam Search initialized with beam width 4. Blocks shared across 4 candidates.",
+                reqs: [
+                    { id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our"]}] },
+                    { id: 'Req-2', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our"]}] },
+                    { id: 'Req-3', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our"]}] },
+                    { id: 'Req-4', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our"]}] }
+                ],
+                cow: [], highlight: [7, 3], oldWaste: 75, oldUtil: 25, newUtil: 98, batch: '3.8x'
+            },
+            {
+                log: "Candidates generate tokens. Copy-on-Write allocates new physical blocks (12, 14, 5).",
+                reqs: [
+                    { id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:12, t:["years","ago","our","brought"]}] },
+                    { id: 'Req-2', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:14, t:["years","ago","our","conceived"]}] },
+                    { id: 'Req-3', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:5, t:["years","ago","our","created"]}] },
+                    { id: 'Req-4', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:3, t:["years","ago","our","dedicated"]}] }
+                ],
+                cow: [3, 12, 14, 5], highlight: [12, 14, 5, 3], oldWaste: 68, oldUtil: 31, newUtil: 96, batch: '3.8x'
+            },
+            {
+                log: "Beam pruning: low-probability branches evicted. Physical Blocks 5 and 3 are freed back to the GPU pool.",
+                reqs: [
+                    { id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:12, t:["years","ago","our","brought"]}] },
+                    { id: 'Req-2', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:14, t:["years","ago","our","conceived"]}] }
+                ],
+                cow: [], highlight: [], freed: [5, 3], oldWaste: 68, oldUtil: 31, newUtil: 98, batch: '2.4x'
+            },
+            {
+                log: "Surviving branches continue generation, allocating new blocks normally.",
+                reqs: [
+                    { id: 'Req-1', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:12, t:["years","ago","our","brought"]}, {l:2, p:11, t:["forth"]}] },
+                    { id: 'Req-2', blocks: [{l:0, p:7, t:["Four","score","and","seven"]}, {l:1, p:14, t:["years","ago","our","conceived"]}, {l:2, p:2, t:["in"]}] }
+                ],
+                cow: [], highlight: [11, 2], oldWaste: 62, oldUtil: 37, newUtil: 96, batch: '2.4x'
+            }
+        ]
+    };
+
+    let currentMode = 'single';
+    let currentStep = 0;
+    let isPlaying = false;
+    let playInterval = null;
+    let isSwapped = false;
+
+    function applyState() {
+        const stateObj = SIM_DATA[currentMode][currentStep];
+        
+        const physBlocks = Array(16).fill(null).map((_, i) => ({ id: i, tokens: [], refCount: 0, owners: new Set() }));
+        stateObj.reqs.forEach(req => {
+            req.blocks.forEach(b => {
+                physBlocks[b.p].tokens = b.t;
+                physBlocks[b.p].refCount++;
+                physBlocks[b.p].owners.add(req.id);
+            });
+        });
+
+        // 1. Old Way
+        const oldWayContainer = document.getElementById('old-way-container');
+        oldWayContainer.innerHTML = '';
+        stateObj.reqs.forEach((req, idx) => {
+            let totalTokens = req.blocks.reduce((sum, b) => sum + b.t.length, 0);
+            let html = `<div class="mb-4">
+                <div class="text-[11px] text-slate-500 mb-1 font-bold uppercase tracking-wide" style="color: ${hexColors[req.id]}">${req.id} Memory Trace</div>
+                <div class="flex flex-wrap gap-1">`;
+            for (let i = 0; i < 16; i++) {
+                if (i < totalTokens) {
+                    html += `<div class="w-[calc(12.5%-4px)] aspect-square rounded-[3px] bg-emerald-500 border border-emerald-600 shadow-sm transition-all duration-300 transform scale-100"></div>`;
+                } else {
+                    html += `<div class="w-[calc(12.5%-4px)] aspect-square rounded-[3px] bg-red-50 border border-red-200 stripe-bg transition-all duration-300"></div>`;
+                }
+            }
+            html += `</div></div>`;
+            oldWayContainer.innerHTML += html;
+        });
+
+        // 2. Logical Blocks
+        let lbHtml = '';
+        stateObj.reqs.forEach(req => {
+            const color = hexColors[req.id];
+            lbHtml += `<div class="mb-5">
+                <div class="text-[10px] mb-1.5 font-bold uppercase tracking-wide" style="color: ${color}">${req.id}</div>
+                <div class="space-y-3 pt-3">`;
+            
+            req.blocks.forEach(b => {
+                let isLHighlight = stateObj.highlight && stateObj.highlight.includes(b.p) && !isSwapped;
+                let isCow = stateObj.cow && stateObj.cow.includes(b.p) && !isSwapped;
+                
+                let extraStyle = isLHighlight ? `border: 2px solid ${color}; transform: scale(1.02); z-index: 20; box-shadow: 0 4px 6px -1px ${color}40;` : 'border: 1px solid #e2e8f0;';
+                if (isCow) extraStyle += ` box-shadow: 0 0 12px ${color}80;`;
+                
+                lbHtml += `<div id="logical-${req.id}-${b.l}" class="flex items-center gap-1.5 bg-white p-1.5 rounded-md relative transition-all duration-300" style="${extraStyle}">
+                    <div class="text-[9px] font-bold text-slate-500 bg-slate-50 border border-slate-200 px-1 py-1 rounded w-6 text-center shrink-0 shadow-sm">L${b.l}</div>
+                    <div class="flex gap-1 w-full">`;
+                
+                b.t.forEach(t => {
+                    lbHtml += `<span class="flex-1 text-center px-0.5 py-0.5 rounded text-[10px] truncate font-semibold" style="background-color: ${color}15; color: ${color}; border: 1px solid ${color}30">${t}</span>`;
+                });
+                for(let i = b.t.length; i < 4; i++) {
+                    lbHtml += `<span class="flex-1 text-center px-0.5 py-0.5 rounded text-[10px] bg-slate-50 text-slate-400 border border-slate-200 border-dashed">--</span>`;
+                }
+                
+                // Tooltip Subtitle for active Logical Block
+                if (isLHighlight) {
+                    lbHtml += `<div class="absolute -top-7 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-[9px] font-bold px-2 py-0.5 rounded shadow animate-bounce whitespace-nowrap">
+                        Active Logical Block
+                        <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 border-[4px] border-transparent border-t-slate-800"></div>
+                    </div>`;
+                }
+
+                lbHtml += `</div></div>`;
+            });
+            lbHtml += `</div></div>`;
+        });
+        document.getElementById('logical-blocks').innerHTML = lbHtml;
+
+        // 3. Block Table
+        let btHtml = '';
+        stateObj.reqs.forEach(req => {
+            req.blocks.forEach(b => {
+                const pBlock = physBlocks[b.p];
+                const color = hexColors[req.id];
+                
+                let isBHighlight = stateObj.highlight && stateObj.highlight.includes(b.p) && !isSwapped;
+                let trStyle = isBHighlight ? `background-color: ${color}10; border-left: 3px solid ${color}; transform: scale(1.02); z-index: 10; position: relative; box-shadow: 0 2px 4px rgba(0,0,0,0.05);` : 'border-left: 3px solid transparent;';
+                
+                btHtml += `
+                <tr class="block-table-row border-b border-slate-200/50 transition-all duration-300 cursor-default" data-lid="${b.l}" data-pid="${b.p}" data-reqid="${req.id}" style="${trStyle}">
+                    <td class="p-2.5"><span class="px-1.5 py-0.5 rounded text-xs font-bold" style="background-color: ${color}15; color: ${color}; border: 1px solid ${color}30">L${b.l}</span></td>
+                    <td class="p-2.5 text-slate-800 font-bold">P${b.p}</td>
+                    <td class="p-2.5 text-slate-500 font-medium">${b.t.length}/4</td>
+                    <td class="p-2.5"><span class="${pBlock.refCount > 1 ? 'bg-indigo-100 text-indigo-700 border border-indigo-200' : 'bg-slate-100 text-slate-500 border border-slate-200'} px-1.5 py-0.5 rounded text-[10px] font-bold">${pBlock.refCount}</span></td>
+                    <td class="p-0 relative w-0">`;
+                    
+                // Tooltip Subtitle for Block Table mapping
+                if (isBHighlight) {
+                    btHtml += `<div class="absolute right-2 top-1/2 -translate-y-1/2 bg-slate-800 text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow animate-pulse whitespace-nowrap z-50">
+                        Map Updated
+                        <div class="absolute top-1/2 -left-1 -translate-y-1/2 border-[3px] border-transparent border-r-slate-800"></div>
+                    </div>`;
+                }
+                
+                btHtml += `</td></tr>`;
+            });
+        });
+        document.getElementById('block-table-body').innerHTML = btHtml;
+
+        // 4. Physical Blocks
+        const targetDiv = isSwapped ? document.getElementById('cpu-blocks') : document.getElementById('physical-blocks');
+        const otherDiv = isSwapped ? document.getElementById('physical-blocks') : document.getElementById('cpu-blocks');
+        
+        if(isSwapped) {
+            document.getElementById('cpu-blocks').classList.remove('opacity-30');
+            document.getElementById('cpu-blocks').classList.add('opacity-100');
+        } else {
+            document.getElementById('cpu-blocks').classList.add('opacity-30');
+            document.getElementById('cpu-blocks').classList.remove('opacity-100');
+        }
+
+        otherDiv.innerHTML = Array(16).fill('<div class="bg-slate-50 border border-slate-200 border-dashed rounded-md p-1 h-[56px] opacity-40"></div>').join('');
+
+        let pbHtml = '';
+        const idPrefix = isSwapped ? 'cpu' : 'gpu';
+        for(let i=0; i<16; i++) {
+            const pb = physBlocks[i];
+            let isHighlight = stateObj.highlight && stateObj.highlight.includes(i);
+            let isCow = stateObj.cow && stateObj.cow.includes(i);
+            let isFreed = stateObj.freed && stateObj.freed.includes(i);
+            
+            if(pb.refCount > 0) {
+                let classes = 'bg-white border-2 border-slate-200 rounded-md p-1 h-[56px] relative transition-all duration-300 shadow-sm z-10 flex flex-col justify-end';
+                if(isHighlight && !isSwapped) classes += ' block-pulse scale-[1.05] z-30 shadow-md';
+                if(isCow && !isSwapped) classes += ' cow-flash scale-[1.05] z-30 shadow-md';
+                else if (!isHighlight) classes += ' scale-100 z-10';
+                
+                let borderColor = '#cbd5e1'; 
+                if(pb.owners.size === 1) borderColor = hexColors[Array.from(pb.owners)[0]];
+                
+                pbHtml += `<div id="${idPrefix}-physical-${i}" class="${classes}" style="border-color: ${borderColor}">`;
+                
+                // Tooltip Subtitle for Physical Block Action
+                if ((isHighlight || isCow) && !isSwapped) {
+                    let tooltipText = "Writing Token ✍️";
+                    if (isCow) tooltipText = "Copy-on-Write ⚡";
+                    else if (pb.tokens.length === 1) tooltipText = "New Block ✨";
+                    else if (pb.tokens.length === 4) tooltipText = "Block Full 🔒";
+                    
+                    let isRightEdge = (i % 4 === 3);
+                    let posClass = isRightEdge ? 'right-0' : 'left-1/2 -translate-x-1/2';
+                    let arrowClass = isRightEdge ? 'right-4' : 'left-1/2 -translate-x-1/2';
+                    
+                    pbHtml += `<div class="absolute -top-6 ${posClass} bg-slate-800 text-white text-[9px] font-bold px-2 py-0.5 rounded shadow-lg whitespace-nowrap z-50 animate-bounce">
+                        ${tooltipText}
+                        <div class="absolute -bottom-1 ${arrowClass} border-[4px] border-transparent border-t-slate-800"></div>
+                    </div>`;
+                }
+
+                pbHtml += `
+                    <div class="absolute top-0 right-0 text-[10px] font-bold text-slate-400 p-0.5 leading-none bg-white rounded-bl-sm z-20">P${i}</div>`;
+                
+                if (pb.refCount > 1) {
+                    pbHtml += `<div class="absolute top-0 left-0 bg-indigo-500 text-white text-[9px] px-1 rounded-br-md font-bold shadow-sm z-20 border-r border-b border-indigo-600">Ref:${pb.refCount}</div>`;
+                }
+                
+                pbHtml += `<div class="flex flex-wrap gap-0.5 w-full relative z-10">`;
+                pb.tokens.forEach(t => {
+                    pbHtml += `<div class="text-[8.5px] leading-tight text-slate-700 font-semibold bg-slate-100 border border-slate-200 px-0.5 rounded truncate max-w-full" style="border-left: 2px solid ${borderColor}">${t}</div>`;
+                });
+                pbHtml += `</div></div>`;
+            } else {
+                if(isFreed && !isSwapped) {
+                     let isRightEdge = (i % 4 === 3);
+                     let posClass = isRightEdge ? 'right-0' : 'left-1/2 -translate-x-1/2';
+                     let arrowClass = isRightEdge ? 'right-4' : 'left-1/2 -translate-x-1/2';
+                     
+                     pbHtml += `<div id="${idPrefix}-physical-${i}" class="bg-red-50 border-2 border-red-300 border-dashed rounded-md p-1 h-[56px] relative transition-all duration-500 cow-flash z-30 scale-[1.05] shadow-md">
+                        <div class="absolute -top-6 ${posClass} bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded shadow-lg whitespace-nowrap z-50 animate-bounce">
+                            Memory Freed ♻️
+                            <div class="absolute -bottom-1 ${arrowClass} border-[4px] border-transparent border-t-red-600"></div>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center text-red-500 text-[10px] font-bold tracking-widest">FREED</div>
+                     </div>`;
+                } else {
+                    pbHtml += `<div id="${idPrefix}-physical-${i}" class="bg-slate-50 border border-slate-200 border-dashed rounded-md p-1 h-[56px] relative z-10">
+                        <div class="absolute top-0 right-0 text-[9px] font-bold text-slate-400 p-0.5">P${i}</div>
+                    </div>`;
+                }
+            }
+        }
+        targetDiv.innerHTML = pbHtml;
+
+        // 5. Update Metrics & Subtitle text
+        const logElement = document.getElementById('log-text');
+        logElement.style.opacity = 0;
+        setTimeout(() => {
+            logElement.textContent = stateObj.log;
+            logElement.style.opacity = 1;
+        }, 150);
+
+        document.getElementById('old-waste-counter').textContent = stateObj.oldWaste + '%';
+        document.getElementById('metric-util-old').textContent = stateObj.oldUtil + '%';
+        document.getElementById('bar-util-old').style.width = stateObj.oldUtil + '%';
+        document.getElementById('metric-util-new').textContent = stateObj.newUtil + '%';
+        document.getElementById('bar-util-new').style.width = stateObj.newUtil + '%';
+        document.getElementById('metric-batch').textContent = stateObj.batch;
+
+        requestAnimationFrame(() => {
+            setTimeout(drawLines, 50);
+        });
+    }
+
+    function drawLines() {
+        const svg = document.getElementById('mapping-svg');
+        svg.innerHTML = '';
+        
+        document.querySelectorAll('.block-table-row').forEach((row, index) => {
+            const lId = row.dataset.lid;
+            const pId = row.dataset.pid;
+            const reqId = row.dataset.reqid;
+            
+            const lElem = document.getElementById(`logical-${reqId}-${lId}`);
+            const idPrefix = isSwapped ? 'cpu' : 'gpu';
+            const pElem = document.getElementById(`${idPrefix}-physical-${pId}`);
+            
+            if (lElem && pElem && row) {
+                const svgRect = svg.getBoundingClientRect();
+                const lRect = lElem.getBoundingClientRect();
+                const rowRect = row.getBoundingClientRect();
+                const pRect = pElem.getBoundingClientRect();
+                
+                const color = hexColors[reqId];
+                const yOffset = (index % 3) * 2 - 2; 
+                
+                const startX1 = lRect.right - svgRect.left;
+                const startY1 = lRect.top + (lRect.height / 2) - svgRect.top;
+                const endX1 = rowRect.left - svgRect.left;
+                const endY1 = rowRect.top + (rowRect.height / 2) - svgRect.top + yOffset;
+                const cpX1 = startX1 + (endX1 - startX1) / 2;
+                
+                const startX2 = rowRect.right - svgRect.left;
+                const startY2 = rowRect.top + (rowRect.height / 2) - svgRect.top + yOffset;
+                const endX2 = pRect.left - svgRect.left;
+                const endY2 = pRect.top + (pRect.height / 2) - svgRect.top;
+                const cpX2 = startX2 + (endX2 - startX2) / 2;
+                
+                // Highlight active mapping lines
+                const isHighlight = stateObj = SIM_DATA[currentMode][currentStep].highlight && SIM_DATA[currentMode][currentStep].highlight.includes(parseInt(pId)) && !isSwapped;
+                const strokeWidth = isHighlight ? '3' : '2';
+                const opacity1 = isHighlight ? '0.8' : '0.4';
+                const opacity2 = isHighlight ? '1.0' : '0.5';
+                
+                const path1 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path1.setAttribute('d', `M ${startX1} ${startY1} C ${cpX1} ${startY1}, ${cpX1} ${endY1}, ${endX1} ${endY1}`);
+                path1.setAttribute('stroke', color);
+                path1.setAttribute('stroke-width', strokeWidth);
+                path1.setAttribute('fill', 'none');
+                path1.setAttribute('opacity', opacity1);
+                path1.setAttribute('stroke-dasharray', '4');
+                
+                const path2 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path2.setAttribute('d', `M ${startX2} ${startY2} C ${cpX2} ${startY2}, ${cpX2} ${endY2}, ${endX2} ${endY2}`);
+                path2.setAttribute('stroke', color);
+                path2.setAttribute('stroke-width', strokeWidth);
+                path2.setAttribute('fill', 'none');
+                path2.setAttribute('opacity', opacity2);
+                
+                if (isHighlight) {
+                    path1.classList.add('animate-pulse');
+                    path2.classList.add('animate-pulse');
+                }
+
+                svg.appendChild(path1);
+                svg.appendChild(path2);
+            }
+        });
+    }
+
+    function getSpeed() {
+        const val = parseInt(document.getElementById('speed').value);
+        return 2200 - (val * 200); 
+    }
+
+    function setMode(mode) {
+        currentMode = mode;
+        currentStep = 0;
+        isSwapped = false;
+        stopPlay();
+        
+        ['single', 'parallel', 'beam'].forEach(m => {
+            const btn = document.getElementById(`mode-${m}`);
+            if(m === mode) {
+                btn.className = 'px-4 py-2 rounded-md bg-emerald-100 text-emerald-700 font-bold text-sm transition-colors shadow-sm';
+            } else {
+                btn.className = 'px-4 py-2 rounded-md hover:bg-white hover:shadow-sm text-slate-600 font-medium text-sm transition-colors';
+            }
+        });
+        
+        applyState();
+    }
+
+    function nextStep() {
+        const maxSteps = SIM_DATA[currentMode].length - 1;
+        if (currentStep < maxSteps) {
+            currentStep++;
+            applyState();
+        } else {
+            stopPlay();
+        }
+    }
+
+    function resetState() {
+        currentStep = 0;
+        isSwapped = false;
+        applyState();
+    }
+
+    function togglePlay() {
+        isPlaying = !isPlaying;
+        const btn = document.getElementById('btn-play');
+        if (isPlaying) {
+            btn.innerHTML = `<i data-lucide="pause" class="w-4 h-4"></i> Pause`;
+            lucide.createIcons();
+            if (currentStep >= SIM_DATA[currentMode].length - 1) resetState();
+            playInterval = setInterval(nextStep, getSpeed());
+        } else {
+            stopPlay();
+        }
+    }
+
+    function stopPlay() {
+        isPlaying = false;
+        clearInterval(playInterval);
+        const btn = document.getElementById('btn-play');
+        btn.innerHTML = `<i data-lucide="play" class="w-4 h-4"></i> Auto Run`;
+        lucide.createIcons();
+    }
+
+    function togglePreempt() {
+        isSwapped = !isSwapped;
+        const btn = document.getElementById('btn-preempt');
+        if (isSwapped) {
+            btn.classList.replace('bg-amber-500', 'bg-red-500');
+            btn.classList.replace('hover:bg-amber-400', 'hover:bg-red-400');
+            btn.innerHTML = `<i data-lucide="arrow-up" class="w-4 h-4"></i> Restore`;
+        } else {
+            btn.classList.replace('bg-red-500', 'bg-amber-500');
+            btn.classList.replace('hover:bg-red-400', 'hover:bg-amber-400');
+            btn.innerHTML = `<i data-lucide="cpu" class="w-4 h-4"></i> Preempt`;
+        }
+        lucide.createIcons();
+        applyState();
+    }
+
+    document.getElementById('mode-single').addEventListener('click', () => setMode('single'));
+    document.getElementById('mode-parallel').addEventListener('click', () => setMode('parallel'));
+    document.getElementById('mode-beam').addEventListener('click', () => setMode('beam'));
+    document.getElementById('btn-step').addEventListener('click', () => { stopPlay(); nextStep(); });
+    document.getElementById('btn-play').addEventListener('click', togglePlay);
+    document.getElementById('btn-reset').addEventListener('click', () => { stopPlay(); resetState(); });
+    document.getElementById('btn-preempt').addEventListener('click', togglePreempt);
+    
+    document.getElementById('speed').addEventListener('input', () => {
+        if(isPlaying) {
+            clearInterval(playInterval);
+            playInterval = setInterval(nextStep, getSpeed());
+        }
+    });
+
+    window.addEventListener('resize', () => requestAnimationFrame(drawLines));
+    document.getElementById('block-table-container').addEventListener('scroll', () => requestAnimationFrame(drawLines), { capture: true });
+    document.getElementById('physical-column').addEventListener('scroll', () => requestAnimationFrame(drawLines), { capture: true });
+
+    applyState();
+  </script>
+</body>
+</html>
