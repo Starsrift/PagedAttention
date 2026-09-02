@@ -247,18 +247,18 @@ Open [`simulator/index.html`](./simulator/index.html) directly in your browser (
 
 **Single Generation** — Dynamic block allocation as tokens fill physical blocks:
 
-![Single Generation](./recordings/Gifs/Single_Generation.gif)
-> *GIF placeholder — add `Single_Generation.gif` to `recordings/Gifs/`*
+<img width="1902" height="892" alt="Single Generation" src="https://github.com/user-attachments/assets/bf169d4f-46d5-4e7e-83dc-99a242c6b5d5" />
+
 
 **Parallel Sampling** — Block sharing and Copy-on-Write in action:
 
-![Parallel Sampling](./recordings/Gifs/Parallel_Sampling.gif)
-> *GIF placeholder — add `Parallel_Sampling.gif` to `recordings/Gifs/`*
+<img width="1906" height="896" alt="Parallel Sampling" src="https://github.com/user-attachments/assets/0c06ed51-62e4-4b72-8d1a-77f07dd3793e" />
+
 
 **Beam Search** — Candidate pruning and instant memory reclamation:
 
-![Beam Search](./recordings/Gifs/Beam_Search.gif)
-> *GIF placeholder — add `Beam_Search.gif` to `recordings/Gifs/`*
+<img width="1906" height="896" alt="Beam Search" src="https://github.com/user-attachments/assets/5b9d8970-4f25-4600-b36f-77e08b24296e" />
+
 
 ---
 
