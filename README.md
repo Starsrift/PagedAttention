@@ -2,11 +2,11 @@
 
 This repository provides an educational deep-dive into **PagedAttention**, the core memory-management algorithm that powers high-throughput LLM inference engines like [vLLM](https://github.com/vllm-project/vllm).
 
-## 🗂️ Repository Structure
+##  Repository Structure
 
-- 🎮 **`simulator/index.html`**: A highly interactive, single-file HTML/Vanilla JS visualizer demonstrating PagedAttention in real-time.
-- 🐍 **`PagedAttention_Tutorial.ipynb`**: A step-by-step PyTorch implementation reconstructing the Block Table, Memory Pool, and PagedAttention kernel from scratch.
-- 🎥 **`recordings/`**: Contains MP4s and GIFs capturing the simulator's animations for use in articles or blogs.
+- **`simulator/index.html`**: A highly interactive, single-file HTML/Vanilla JS visualizer demonstrating PagedAttention in real-time.
+- **`PagedAttention_Tutorial.ipynb`**: A step-by-step PyTorch implementation reconstructing the Block Table, Memory Pool, and PagedAttention kernel from scratch.
+- **`recordings/`**: Contains MP4s and GIFs capturing the simulator's animations for use in articles or blogs.
 
 ---
 
@@ -21,20 +21,20 @@ Here is how it works in practice, as shown in the simulator:
 ### 1. Single Generation (Dynamic Allocation)
 Instead of pre-allocating max sequence lengths, PagedAttention allocates physical blocks dynamically on-demand. Memory waste is limited to the unused slots in the *final* block, boosting utilization to ~96%.
 
-![Single Generation Demo](./recordings/Gifs/Single_Generation.gif)
-> *Placeholder for Single Generation GIF*
+<img width="1902" height="892" alt="Single Generation" src="https://github.com/user-attachments/assets/fa111681-7a9d-42a7-b4f5-7728f7a87be8" />
+
 
 ### 2. Parallel Sampling (Copy-on-Write)
 When generating multiple responses from a single prompt, sequences share the prompt's physical blocks. The Cache Engine uses **Copy-on-Write (CoW)** to safely duplicate shared blocks only when the generations diverge, saving massive amounts of memory.
 
-![Parallel Sampling Demo](./recordings/Gifs/Parallel_Sampling.gif)
-> *Placeholder for Parallel Sampling GIF*
+<img width="1906" height="896" alt="Parallel Sampling" src="https://github.com/user-attachments/assets/4ba94b6e-fc03-468e-ad9f-d353bc509c2c" />
+
 
 ### 3. Beam Search (Dynamic Memory Freeing)
 As beam search prunes low-probability branches, the reference counts of shared physical blocks drop. When a block's reference count hits `0`, it is instantly freed back to the active GPU DRAM pool.
 
-![Beam Search Demo](./recordings/Gifs/Beam_Search.gif)
-> *Placeholder for Beam Search GIF*
+<img width="1906" height="896" alt="Beam Search" src="https://github.com/user-attachments/assets/a77d1462-cb61-4b9a-9720-9df54c7adae3" />
+
 
 ---
 
@@ -46,5 +46,3 @@ Check out [`PagedAttention_Tutorial.ipynb`](./PagedAttention_Tutorial.ipynb) for
 3. `paged_attention()`: Reconstructing contiguous K/V tensors from scattered physical blocks to compute standard Scaled Dot-Product Attention.
 
 ---
-
-*This educational companion was built to demystify the memory management breakthroughs driving modern AI infrastructure.*
