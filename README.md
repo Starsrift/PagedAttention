@@ -4,6 +4,7 @@
 
 This repository provides an educational deep-dive into **PagedAttention**, the core memory-management algorithm that powers high-throughput LLM inference engines like [vLLM](https://github.com/vllm-project/vllm).
 
+MEDIUM ARTICLE : https://medium.com/towards-artificial-intelligence/stop-wasting-gpu-memory-a-deep-dive-into-vllms-pagedattention-a7155f1aa0ec
 ---
 
 ## 🗂️ Repository Structure
