@@ -1,0 +1,1 @@
+{"status": "passed", "original_cases": 54, "max_abs_error": 2.1033092778566242e-07, "lifecycle_cases": 9, "elapsed_seconds": 21.717081785202026, "output": "experiments/results/cuda_correctness.json"}

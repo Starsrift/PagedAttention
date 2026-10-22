@@ -1,0 +1,15 @@
+.DS_Store
+.local/
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
+.env.*
+!.env.example
+models/
+checkpoints/
+*.safetensors
+*.pt
+*.pth
+experiments/runs/
