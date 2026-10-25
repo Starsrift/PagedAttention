@@ -1,0 +1,2570 @@
+{
+  "status": "passed",
+  "started_at": "2026-10-23T09:03:52.189023+08:00",
+  "experiments": {
+    "E1": {
+      "prompts": [
+        "用一句话解释什么是键值缓存。",
+        "What is the capital of France? Answer briefly.",
+        "请列出学习编程的两个建议。"
+      ],
+      "cases": [
+        {
+          "prompt_tokens": 21,
+          "generated_token_ids": [
+            60949,
+            25511,
+            99982,
+            24360,
+            101158,
+            100751,
+            105653,
+            20074,
+            9370,
+            100674,
+            3837,
+            23031,
+            100627,
+            20074,
+            104925,
+            101991,
+            33108,
+            72448,
+            102111,
+            1773,
+            151645
+          ],
+          "generated_text": "键值缓存是一种用于存储数据的机制，以提高数据访问效率和系统性能。",
+          "cached_tokens": 41,
+          "status": "passed"
+        },
+        {
+          "prompt_tokens": 22,
+          "generated_token_ids": [
+            785,
+            6722,
+            315,
+            9625,
+            374,
+            12095,
+            13,
+            151645
+          ],
+          "generated_text": "The capital of France is Paris.",
+          "cached_tokens": 29,
+          "status": "passed"
+        },
+        {
+          "prompt_tokens": 20,
+          "generated_token_ids": [
+            100134,
+            110569,
+            9370,
+            100369,
+            101898,
+            104506,
+            48443,
+            16,
+            13,
+            3070,
+            100652,
+            100134,
+            57218,
+            100419,
+            334,
+            5122,
+            110569,
+            113360,
+            85106,
+            99607,
+            105009,
+            33108,
+            101964,
+            9370,
+            101139,
+            3837,
+            101898,
+            18493,
+            100134,
+            101925,
+            100662,
+            116274
+          ],
+          "generated_text": "学习编程的两个建议如下：\n\n1. **持续学习与实践**：编程是一项需要不断练习和探索的技能，建议在学习过程中保持好奇心",
+          "cached_tokens": 51,
+          "status": "passed"
+        }
+      ],
+      "status": "passed"
+    },
+    "E2": {
+      "status": "passed",
+      "cases": [
+        {
+          "block_size": 4,
+          "length": 1,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 1,
+            "block_size": 4,
+            "pool_tensor_bytes": 2293760,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 4,
+          "length": 3,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 3,
+            "block_size": 4,
+            "pool_tensor_bytes": 2293760,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 4,
+          "length": 4,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 4,
+            "block_size": 4,
+            "pool_tensor_bytes": 2293760,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 4,
+          "length": 5,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": true,
+          "stats": {
+            "layers": 28,
+            "length": 5,
+            "block_size": 4,
+            "pool_tensor_bytes": 2752512,
+            "physical_blocks_in_use": 56,
+            "pool_blocks": 168,
+            "mapped_blocks": 56,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 4,
+          "length": 127,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": true,
+          "stats": {
+            "layers": 28,
+            "length": 127,
+            "block_size": 4,
+            "pool_tensor_bytes": 16515072,
+            "physical_blocks_in_use": 896,
+            "pool_blocks": 1008,
+            "mapped_blocks": 896,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 16,
+          "length": 1,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 1,
+            "block_size": 16,
+            "pool_tensor_bytes": 9175040,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 16,
+          "length": 15,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 15,
+            "block_size": 16,
+            "pool_tensor_bytes": 9175040,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 16,
+          "length": 16,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 16,
+            "block_size": 16,
+            "pool_tensor_bytes": 9175040,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 16,
+          "length": 17,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": true,
+          "stats": {
+            "layers": 28,
+            "length": 17,
+            "block_size": 16,
+            "pool_tensor_bytes": 11010048,
+            "physical_blocks_in_use": 56,
+            "pool_blocks": 168,
+            "mapped_blocks": 56,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 16,
+          "length": 127,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": true,
+          "stats": {
+            "layers": 28,
+            "length": 127,
+            "block_size": 16,
+            "pool_tensor_bytes": 22020096,
+            "physical_blocks_in_use": 224,
+            "pool_blocks": 336,
+            "mapped_blocks": 224,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 32,
+          "length": 1,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 1,
+            "block_size": 32,
+            "pool_tensor_bytes": 18350080,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 32,
+          "length": 31,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 31,
+            "block_size": 32,
+            "pool_tensor_bytes": 18350080,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 32,
+          "length": 32,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 32,
+            "block_size": 32,
+            "pool_tensor_bytes": 18350080,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 32,
+          "length": 33,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": true,
+          "stats": {
+            "layers": 28,
+            "length": 33,
+            "block_size": 32,
+            "pool_tensor_bytes": 22020096,
+            "physical_blocks_in_use": 56,
+            "pool_blocks": 168,
+            "mapped_blocks": 56,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 32,
+          "length": 127,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": true,
+          "stats": {
+            "layers": 28,
+            "length": 127,
+            "block_size": 32,
+            "pool_tensor_bytes": 29360128,
+            "physical_blocks_in_use": 112,
+            "pool_blocks": 224,
+            "mapped_blocks": 112,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        }
+      ]
+    },
+    "E3": {
+      "status": "passed",
+      "cases": [
+        {
+          "block_size": 4,
+          "prompt_index": 0,
+          "prompt_tokens": 21,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 7.65625,
+              "reference_token": 60949,
+              "paged_token": 60949
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 12.265625,
+              "reference_token": 25511,
+              "paged_token": 25511
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.140625,
+              "reference_token": 99982,
+              "paged_token": 99982
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.546875,
+              "reference_token": 24360,
+              "paged_token": 24360
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.640625,
+              "reference_token": 101158,
+              "paged_token": 101158
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.328125,
+              "reference_token": 100751,
+              "paged_token": 100751
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.359375,
+              "reference_token": 105653,
+              "paged_token": 105653
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 20074,
+              "paged_token": 20074
+            },
+            {
+              "step": 8,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 9370,
+              "paged_token": 9370
+            },
+            {
+              "step": 9,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.375,
+              "reference_token": 100674,
+              "paged_token": 100674
+            },
+            {
+              "step": 10,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 6.078125,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 11,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.1875,
+              "reference_token": 23031,
+              "paged_token": 23031
+            },
+            {
+              "step": 12,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.8125,
+              "reference_token": 100627,
+              "paged_token": 100627
+            },
+            {
+              "step": 13,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.296875,
+              "reference_token": 20074,
+              "paged_token": 20074
+            },
+            {
+              "step": 14,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.96875,
+              "reference_token": 104925,
+              "paged_token": 104925
+            },
+            {
+              "step": 15,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.703125,
+              "reference_token": 101991,
+              "paged_token": 101991
+            },
+            {
+              "step": 16,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.484375,
+              "reference_token": 33108,
+              "paged_token": 33108
+            },
+            {
+              "step": 17,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.421875,
+              "reference_token": 72448,
+              "paged_token": 72448
+            },
+            {
+              "step": 18,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.671875,
+              "reference_token": 102111,
+              "paged_token": 102111
+            },
+            {
+              "step": 19,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.609375,
+              "reference_token": 1773,
+              "paged_token": 1773
+            },
+            {
+              "step": 20,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 11.046875,
+              "reference_token": 151645,
+              "paged_token": 151645
+            }
+          ],
+          "generated_token_ids": [
+            60949,
+            25511,
+            99982,
+            24360,
+            101158,
+            100751,
+            105653,
+            20074,
+            9370,
+            100674,
+            3837,
+            23031,
+            100627,
+            20074,
+            104925,
+            101991,
+            33108,
+            72448,
+            102111,
+            1773,
+            151645
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "键值缓存是一种用于存储数据的机制，以提高数据访问效率和系统性能。",
+          "stats": {
+            "layers": 28,
+            "length": 41,
+            "block_size": 4,
+            "pool_tensor_bytes": 8257536,
+            "physical_blocks_in_use": 308,
+            "pool_blocks": 504,
+            "mapped_blocks": 308,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        },
+        {
+          "block_size": 4,
+          "prompt_index": 1,
+          "prompt_tokens": 22,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.28125,
+              "reference_token": 785,
+              "paged_token": 785
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 9.203125,
+              "reference_token": 6722,
+              "paged_token": 6722
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 8.578125,
+              "reference_token": 315,
+              "paged_token": 315
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.0,
+              "reference_token": 9625,
+              "paged_token": 9625
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 12.109375,
+              "reference_token": 374,
+              "paged_token": 374
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.703125,
+              "reference_token": 12095,
+              "paged_token": 12095
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 8.359375,
+              "reference_token": 13,
+              "paged_token": 13
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 12.671875,
+              "reference_token": 151645,
+              "paged_token": 151645
+            }
+          ],
+          "generated_token_ids": [
+            785,
+            6722,
+            315,
+            9625,
+            374,
+            12095,
+            13,
+            151645
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "The capital of France is Paris.",
+          "stats": {
+            "layers": 28,
+            "length": 29,
+            "block_size": 4,
+            "pool_tensor_bytes": 8257536,
+            "physical_blocks_in_use": 224,
+            "pool_blocks": 504,
+            "mapped_blocks": 224,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        },
+        {
+          "block_size": 4,
+          "prompt_index": 2,
+          "prompt_tokens": 20,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.453125,
+              "reference_token": 100134,
+              "paged_token": 100134
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.21875,
+              "reference_token": 110569,
+              "paged_token": 110569
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.78125,
+              "reference_token": 9370,
+              "paged_token": 9370
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 7.328125,
+              "reference_token": 100369,
+              "paged_token": 100369
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.546875,
+              "reference_token": 101898,
+              "paged_token": 101898
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.515625,
+              "reference_token": 104506,
+              "paged_token": 104506
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.96875,
+              "reference_token": 48443,
+              "paged_token": 48443
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 9.703125,
+              "reference_token": 16,
+              "paged_token": 16
+            },
+            {
+              "step": 8,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 13.171875,
+              "reference_token": 13,
+              "paged_token": 13
+            },
+            {
+              "step": 9,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 5.96875,
+              "reference_token": 3070,
+              "paged_token": 3070
+            },
+            {
+              "step": 10,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 100652,
+              "paged_token": 100652
+            },
+            {
+              "step": 11,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.265625,
+              "reference_token": 100134,
+              "paged_token": 100134
+            },
+            {
+              "step": 12,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.625,
+              "reference_token": 57218,
+              "paged_token": 57218
+            },
+            {
+              "step": 13,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 4.96875,
+              "reference_token": 100419,
+              "paged_token": 100419
+            },
+            {
+              "step": 14,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.921875,
+              "reference_token": 334,
+              "paged_token": 334
+            },
+            {
+              "step": 15,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.40625,
+              "reference_token": 5122,
+              "paged_token": 5122
+            },
+            {
+              "step": 16,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.21875,
+              "reference_token": 110569,
+              "paged_token": 110569
+            },
+            {
+              "step": 17,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.375,
+              "reference_token": 113360,
+              "paged_token": 113360
+            },
+            {
+              "step": 18,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 85106,
+              "paged_token": 85106
+            },
+            {
+              "step": 19,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 4.4375,
+              "reference_token": 99607,
+              "paged_token": 99607
+            },
+            {
+              "step": 20,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5625,
+              "reference_token": 105009,
+              "paged_token": 105009
+            },
+            {
+              "step": 21,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.6875,
+              "reference_token": 33108,
+              "paged_token": 33108
+            },
+            {
+              "step": 22,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.8125,
+              "reference_token": 101964,
+              "paged_token": 101964
+            },
+            {
+              "step": 23,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.390625,
+              "reference_token": 9370,
+              "paged_token": 9370
+            },
+            {
+              "step": 24,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 6.4375,
+              "reference_token": 101139,
+              "paged_token": 101139
+            },
+            {
+              "step": 25,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.046875,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 26,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.515625,
+              "reference_token": 101898,
+              "paged_token": 101898
+            },
+            {
+              "step": 27,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.078125,
+              "reference_token": 18493,
+              "paged_token": 18493
+            },
+            {
+              "step": 28,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.6875,
+              "reference_token": 100134,
+              "paged_token": 100134
+            },
+            {
+              "step": 29,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.96875,
+              "reference_token": 101925,
+              "paged_token": 101925
+            },
+            {
+              "step": 30,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.03125,
+              "reference_token": 100662,
+              "paged_token": 100662
+            },
+            {
+              "step": 31,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.765625,
+              "reference_token": 116274,
+              "paged_token": 116274
+            }
+          ],
+          "generated_token_ids": [
+            100134,
+            110569,
+            9370,
+            100369,
+            101898,
+            104506,
+            48443,
+            16,
+            13,
+            3070,
+            100652,
+            100134,
+            57218,
+            100419,
+            334,
+            5122,
+            110569,
+            113360,
+            85106,
+            99607,
+            105009,
+            33108,
+            101964,
+            9370,
+            101139,
+            3837,
+            101898,
+            18493,
+            100134,
+            101925,
+            100662,
+            116274
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "学习编程的两个建议如下：\n\n1. **持续学习与实践**：编程是一项需要不断练习和探索的技能，建议在学习过程中保持好奇心",
+          "stats": {
+            "layers": 28,
+            "length": 51,
+            "block_size": 4,
+            "pool_tensor_bytes": 7798784,
+            "physical_blocks_in_use": 364,
+            "pool_blocks": 476,
+            "mapped_blocks": 364,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        },
+        {
+          "block_size": 16,
+          "prompt_index": 0,
+          "prompt_tokens": 21,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 7.65625,
+              "reference_token": 60949,
+              "paged_token": 60949
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 12.265625,
+              "reference_token": 25511,
+              "paged_token": 25511
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.140625,
+              "reference_token": 99982,
+              "paged_token": 99982
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.546875,
+              "reference_token": 24360,
+              "paged_token": 24360
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.640625,
+              "reference_token": 101158,
+              "paged_token": 101158
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.328125,
+              "reference_token": 100751,
+              "paged_token": 100751
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.359375,
+              "reference_token": 105653,
+              "paged_token": 105653
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 20074,
+              "paged_token": 20074
+            },
+            {
+              "step": 8,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 9370,
+              "paged_token": 9370
+            },
+            {
+              "step": 9,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.375,
+              "reference_token": 100674,
+              "paged_token": 100674
+            },
+            {
+              "step": 10,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 6.078125,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 11,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.1875,
+              "reference_token": 23031,
+              "paged_token": 23031
+            },
+            {
+              "step": 12,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.8125,
+              "reference_token": 100627,
+              "paged_token": 100627
+            },
+            {
+              "step": 13,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.296875,
+              "reference_token": 20074,
+              "paged_token": 20074
+            },
+            {
+              "step": 14,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.96875,
+              "reference_token": 104925,
+              "paged_token": 104925
+            },
+            {
+              "step": 15,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.703125,
+              "reference_token": 101991,
+              "paged_token": 101991
+            },
+            {
+              "step": 16,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.484375,
+              "reference_token": 33108,
+              "paged_token": 33108
+            },
+            {
+              "step": 17,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.421875,
+              "reference_token": 72448,
+              "paged_token": 72448
+            },
+            {
+              "step": 18,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.671875,
+              "reference_token": 102111,
+              "paged_token": 102111
+            },
+            {
+              "step": 19,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.609375,
+              "reference_token": 1773,
+              "paged_token": 1773
+            },
+            {
+              "step": 20,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 11.046875,
+              "reference_token": 151645,
+              "paged_token": 151645
+            }
+          ],
+          "generated_token_ids": [
+            60949,
+            25511,
+            99982,
+            24360,
+            101158,
+            100751,
+            105653,
+            20074,
+            9370,
+            100674,
+            3837,
+            23031,
+            100627,
+            20074,
+            104925,
+            101991,
+            33108,
+            72448,
+            102111,
+            1773,
+            151645
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "键值缓存是一种用于存储数据的机制，以提高数据访问效率和系统性能。",
+          "stats": {
+            "layers": 28,
+            "length": 41,
+            "block_size": 16,
+            "pool_tensor_bytes": 14680064,
+            "physical_blocks_in_use": 84,
+            "pool_blocks": 224,
+            "mapped_blocks": 84,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        },
+        {
+          "block_size": 16,
+          "prompt_index": 1,
+          "prompt_tokens": 22,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.28125,
+              "reference_token": 785,
+              "paged_token": 785
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 9.203125,
+              "reference_token": 6722,
+              "paged_token": 6722
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 8.578125,
+              "reference_token": 315,
+              "paged_token": 315
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.0,
+              "reference_token": 9625,
+              "paged_token": 9625
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 12.109375,
+              "reference_token": 374,
+              "paged_token": 374
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.703125,
+              "reference_token": 12095,
+              "paged_token": 12095
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 8.359375,
+              "reference_token": 13,
+              "paged_token": 13
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 12.671875,
+              "reference_token": 151645,
+              "paged_token": 151645
+            }
+          ],
+          "generated_token_ids": [
+            785,
+            6722,
+            315,
+            9625,
+            374,
+            12095,
+            13,
+            151645
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "The capital of France is Paris.",
+          "stats": {
+            "layers": 28,
+            "length": 29,
+            "block_size": 16,
+            "pool_tensor_bytes": 14680064,
+            "physical_blocks_in_use": 56,
+            "pool_blocks": 224,
+            "mapped_blocks": 56,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        },
+        {
+          "block_size": 16,
+          "prompt_index": 2,
+          "prompt_tokens": 20,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.453125,
+              "reference_token": 100134,
+              "paged_token": 100134
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.21875,
+              "reference_token": 110569,
+              "paged_token": 110569
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.78125,
+              "reference_token": 9370,
+              "paged_token": 9370
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 7.328125,
+              "reference_token": 100369,
+              "paged_token": 100369
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.546875,
+              "reference_token": 101898,
+              "paged_token": 101898
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.515625,
+              "reference_token": 104506,
+              "paged_token": 104506
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.96875,
+              "reference_token": 48443,
+              "paged_token": 48443
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 9.703125,
+              "reference_token": 16,
+              "paged_token": 16
+            },
+            {
+              "step": 8,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 13.171875,
+              "reference_token": 13,
+              "paged_token": 13
+            },
+            {
+              "step": 9,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 5.96875,
+              "reference_token": 3070,
+              "paged_token": 3070
+            },
+            {
+              "step": 10,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 100652,
+              "paged_token": 100652
+            },
+            {
+              "step": 11,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.265625,
+              "reference_token": 100134,
+              "paged_token": 100134
+            },
+            {
+              "step": 12,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.625,
+              "reference_token": 57218,
+              "paged_token": 57218
+            },
+            {
+              "step": 13,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 4.96875,
+              "reference_token": 100419,
+              "paged_token": 100419
+            },
+            {
+              "step": 14,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.921875,
+              "reference_token": 334,
+              "paged_token": 334
+            },
+            {
+              "step": 15,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.40625,
+              "reference_token": 5122,
+              "paged_token": 5122
+            },
+            {
+              "step": 16,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.21875,
+              "reference_token": 110569,
+              "paged_token": 110569
+            },
+            {
+              "step": 17,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.375,
+              "reference_token": 113360,
+              "paged_token": 113360
+            },
+            {
+              "step": 18,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 85106,
+              "paged_token": 85106
+            },
+            {
+              "step": 19,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 4.4375,
+              "reference_token": 99607,
+              "paged_token": 99607
+            },
+            {
+              "step": 20,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5625,
+              "reference_token": 105009,
+              "paged_token": 105009
+            },
+            {
+              "step": 21,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.6875,
+              "reference_token": 33108,
+              "paged_token": 33108
+            },
+            {
+              "step": 22,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.8125,
+              "reference_token": 101964,
+              "paged_token": 101964
+            },
+            {
+              "step": 23,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.390625,
+              "reference_token": 9370,
+              "paged_token": 9370
+            },
+            {
+              "step": 24,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 6.4375,
+              "reference_token": 101139,
+              "paged_token": 101139
+            },
+            {
+              "step": 25,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.046875,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 26,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.515625,
+              "reference_token": 101898,
+              "paged_token": 101898
+            },
+            {
+              "step": 27,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.078125,
+              "reference_token": 18493,
+              "paged_token": 18493
+            },
+            {
+              "step": 28,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.6875,
+              "reference_token": 100134,
+              "paged_token": 100134
+            },
+            {
+              "step": 29,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.96875,
+              "reference_token": 101925,
+              "paged_token": 101925
+            },
+            {
+              "step": 30,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.03125,
+              "reference_token": 100662,
+              "paged_token": 100662
+            },
+            {
+              "step": 31,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.765625,
+              "reference_token": 116274,
+              "paged_token": 116274
+            }
+          ],
+          "generated_token_ids": [
+            100134,
+            110569,
+            9370,
+            100369,
+            101898,
+            104506,
+            48443,
+            16,
+            13,
+            3070,
+            100652,
+            100134,
+            57218,
+            100419,
+            334,
+            5122,
+            110569,
+            113360,
+            85106,
+            99607,
+            105009,
+            33108,
+            101964,
+            9370,
+            101139,
+            3837,
+            101898,
+            18493,
+            100134,
+            101925,
+            100662,
+            116274
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "学习编程的两个建议如下：\n\n1. **持续学习与实践**：编程是一项需要不断练习和探索的技能，建议在学习过程中保持好奇心",
+          "stats": {
+            "layers": 28,
+            "length": 51,
+            "block_size": 16,
+            "pool_tensor_bytes": 14680064,
+            "physical_blocks_in_use": 112,
+            "pool_blocks": 224,
+            "mapped_blocks": 112,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        },
+        {
+          "block_size": 32,
+          "prompt_index": 0,
+          "prompt_tokens": 21,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 7.65625,
+              "reference_token": 60949,
+              "paged_token": 60949
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 12.265625,
+              "reference_token": 25511,
+              "paged_token": 25511
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.140625,
+              "reference_token": 99982,
+              "paged_token": 99982
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.546875,
+              "reference_token": 24360,
+              "paged_token": 24360
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.640625,
+              "reference_token": 101158,
+              "paged_token": 101158
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.328125,
+              "reference_token": 100751,
+              "paged_token": 100751
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.359375,
+              "reference_token": 105653,
+              "paged_token": 105653
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 20074,
+              "paged_token": 20074
+            },
+            {
+              "step": 8,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 9370,
+              "paged_token": 9370
+            },
+            {
+              "step": 9,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.375,
+              "reference_token": 100674,
+              "paged_token": 100674
+            },
+            {
+              "step": 10,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 6.078125,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 11,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.1875,
+              "reference_token": 23031,
+              "paged_token": 23031
+            },
+            {
+              "step": 12,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.8125,
+              "reference_token": 100627,
+              "paged_token": 100627
+            },
+            {
+              "step": 13,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.296875,
+              "reference_token": 20074,
+              "paged_token": 20074
+            },
+            {
+              "step": 14,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.96875,
+              "reference_token": 104925,
+              "paged_token": 104925
+            },
+            {
+              "step": 15,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.703125,
+              "reference_token": 101991,
+              "paged_token": 101991
+            },
+            {
+              "step": 16,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.484375,
+              "reference_token": 33108,
+              "paged_token": 33108
+            },
+            {
+              "step": 17,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.421875,
+              "reference_token": 72448,
+              "paged_token": 72448
+            },
+            {
+              "step": 18,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.671875,
+              "reference_token": 102111,
+              "paged_token": 102111
+            },
+            {
+              "step": 19,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.609375,
+              "reference_token": 1773,
+              "paged_token": 1773
+            },
+            {
+              "step": 20,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 11.046875,
+              "reference_token": 151645,
+              "paged_token": 151645
+            }
+          ],
+          "generated_token_ids": [
+            60949,
+            25511,
+            99982,
+            24360,
+            101158,
+            100751,
+            105653,
+            20074,
+            9370,
+            100674,
+            3837,
+            23031,
+            100627,
+            20074,
+            104925,
+            101991,
+            33108,
+            72448,
+            102111,
+            1773,
+            151645
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "键值缓存是一种用于存储数据的机制，以提高数据访问效率和系统性能。",
+          "stats": {
+            "layers": 28,
+            "length": 41,
+            "block_size": 32,
+            "pool_tensor_bytes": 22020096,
+            "physical_blocks_in_use": 56,
+            "pool_blocks": 168,
+            "mapped_blocks": 56,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        },
+        {
+          "block_size": 32,
+          "prompt_index": 1,
+          "prompt_tokens": 22,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.28125,
+              "reference_token": 785,
+              "paged_token": 785
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 9.203125,
+              "reference_token": 6722,
+              "paged_token": 6722
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 8.578125,
+              "reference_token": 315,
+              "paged_token": 315
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.0,
+              "reference_token": 9625,
+              "paged_token": 9625
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 12.109375,
+              "reference_token": 374,
+              "paged_token": 374
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.703125,
+              "reference_token": 12095,
+              "paged_token": 12095
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 8.359375,
+              "reference_token": 13,
+              "paged_token": 13
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 12.671875,
+              "reference_token": 151645,
+              "paged_token": 151645
+            }
+          ],
+          "generated_token_ids": [
+            785,
+            6722,
+            315,
+            9625,
+            374,
+            12095,
+            13,
+            151645
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "The capital of France is Paris.",
+          "stats": {
+            "layers": 28,
+            "length": 29,
+            "block_size": 32,
+            "pool_tensor_bytes": 22020096,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 168,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        },
+        {
+          "block_size": 32,
+          "prompt_index": 2,
+          "prompt_tokens": 20,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.453125,
+              "reference_token": 100134,
+              "paged_token": 100134
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.21875,
+              "reference_token": 110569,
+              "paged_token": 110569
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.78125,
+              "reference_token": 9370,
+              "paged_token": 9370
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 7.328125,
+              "reference_token": 100369,
+              "paged_token": 100369
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.546875,
+              "reference_token": 101898,
+              "paged_token": 101898
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.515625,
+              "reference_token": 104506,
+              "paged_token": 104506
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.96875,
+              "reference_token": 48443,
+              "paged_token": 48443
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 9.703125,
+              "reference_token": 16,
+              "paged_token": 16
+            },
+            {
+              "step": 8,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 13.171875,
+              "reference_token": 13,
+              "paged_token": 13
+            },
+            {
+              "step": 9,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 5.96875,
+              "reference_token": 3070,
+              "paged_token": 3070
+            },
+            {
+              "step": 10,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 100652,
+              "paged_token": 100652
+            },
+            {
+              "step": 11,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.265625,
+              "reference_token": 100134,
+              "paged_token": 100134
+            },
+            {
+              "step": 12,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.625,
+              "reference_token": 57218,
+              "paged_token": 57218
+            },
+            {
+              "step": 13,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 4.96875,
+              "reference_token": 100419,
+              "paged_token": 100419
+            },
+            {
+              "step": 14,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.921875,
+              "reference_token": 334,
+              "paged_token": 334
+            },
+            {
+              "step": 15,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.40625,
+              "reference_token": 5122,
+              "paged_token": 5122
+            },
+            {
+              "step": 16,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.21875,
+              "reference_token": 110569,
+              "paged_token": 110569
+            },
+            {
+              "step": 17,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.375,
+              "reference_token": 113360,
+              "paged_token": 113360
+            },
+            {
+              "step": 18,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 85106,
+              "paged_token": 85106
+            },
+            {
+              "step": 19,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 4.4375,
+              "reference_token": 99607,
+              "paged_token": 99607
+            },
+            {
+              "step": 20,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5625,
+              "reference_token": 105009,
+              "paged_token": 105009
+            },
+            {
+              "step": 21,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.6875,
+              "reference_token": 33108,
+              "paged_token": 33108
+            },
+            {
+              "step": 22,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.8125,
+              "reference_token": 101964,
+              "paged_token": 101964
+            },
+            {
+              "step": 23,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.390625,
+              "reference_token": 9370,
+              "paged_token": 9370
+            },
+            {
+              "step": 24,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 6.4375,
+              "reference_token": 101139,
+              "paged_token": 101139
+            },
+            {
+              "step": 25,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.046875,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 26,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.515625,
+              "reference_token": 101898,
+              "paged_token": 101898
+            },
+            {
+              "step": 27,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.078125,
+              "reference_token": 18493,
+              "paged_token": 18493
+            },
+            {
+              "step": 28,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.6875,
+              "reference_token": 100134,
+              "paged_token": 100134
+            },
+            {
+              "step": 29,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.96875,
+              "reference_token": 101925,
+              "paged_token": 101925
+            },
+            {
+              "step": 30,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.03125,
+              "reference_token": 100662,
+              "paged_token": 100662
+            },
+            {
+              "step": 31,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.765625,
+              "reference_token": 116274,
+              "paged_token": 116274
+            }
+          ],
+          "generated_token_ids": [
+            100134,
+            110569,
+            9370,
+            100369,
+            101898,
+            104506,
+            48443,
+            16,
+            13,
+            3070,
+            100652,
+            100134,
+            57218,
+            100419,
+            334,
+            5122,
+            110569,
+            113360,
+            85106,
+            99607,
+            105009,
+            33108,
+            101964,
+            9370,
+            101139,
+            3837,
+            101898,
+            18493,
+            100134,
+            101925,
+            100662,
+            116274
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "学习编程的两个建议如下：\n\n1. **持续学习与实践**：编程是一项需要不断练习和探索的技能，建议在学习过程中保持好奇心",
+          "stats": {
+            "layers": 28,
+            "length": 51,
+            "block_size": 32,
+            "pool_tensor_bytes": 22020096,
+            "physical_blocks_in_use": 56,
+            "pool_blocks": 168,
+            "mapped_blocks": 56,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        }
+      ]
+    },
+    "E4": {
+      "status": "passed",
+      "cases": [
+        {
+          "block_size": 4,
+          "prefix_tokens": 3,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 56,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        },
+        {
+          "block_size": 4,
+          "prefix_tokens": 4,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 0,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        },
+        {
+          "block_size": 4,
+          "prefix_tokens": 5,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 56,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        },
+        {
+          "block_size": 16,
+          "prefix_tokens": 15,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 56,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        },
+        {
+          "block_size": 16,
+          "prefix_tokens": 16,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 0,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        },
+        {
+          "block_size": 16,
+          "prefix_tokens": 17,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 56,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        },
+        {
+          "block_size": 32,
+          "prefix_tokens": 31,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 56,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        },
+        {
+          "block_size": 32,
+          "prefix_tokens": 32,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 0,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        },
+        {
+          "block_size": 32,
+          "prefix_tokens": 33,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 56,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        }
+      ],
+      "oom": {
+        "layers_checked": 28,
+        "allocation_failure_preserved_state": true,
+        "scope": "per-layer shared-tail allocation failure, not whole-forward atomicity",
+        "status": "passed"
+      }
+    },
+    "E5": {
+      "status": "passed",
+      "cases": [
+        {
+          "prefill_ms": 59.53609999778564,
+          "decode_ms_samples": [
+            46.96900000271853,
+            47.85049999918556,
+            47.1508000009635,
+            47.58360000050743,
+            47.193300000799354,
+            48.65129999961937,
+            47.19430000113789,
+            47.21100000097067
+          ],
+          "median_decode_ms": 47.20265000105428,
+          "final_cached_tokens": 72,
+          "allocated_delta_bytes": 8258048,
+          "peak_extra_allocated_bytes": 9323520,
+          "kv_bytes_per_token_all_layers": 114688,
+          "stats": {
+            "logical_kv_bytes": 8257536
+          },
+          "repeat": 0,
+          "kind": "dynamic",
+          "prompt_tokens": 64,
+          "decode_steps": 8
+        },
+        {
+          "prefill_ms": 61.91210000179126,
+          "decode_ms_samples": [
+            55.14890000267769,
+            55.6670000005397,
+            55.0967999988643,
+            55.80810000174097,
+            54.76520000229357,
+            54.352600000129314,
+            54.942800001299474,
+            55.94530000234954
+          ],
+          "median_decode_ms": 55.122850000770995,
+          "final_cached_tokens": 72,
+          "allocated_delta_bytes": 16515584,
+          "peak_extra_allocated_bytes": 18654208,
+          "kv_bytes_per_token_all_layers": 114688,
+          "stats": {
+            "layers": 28,
+            "length": 72,
+            "block_size": 16,
+            "pool_tensor_bytes": 16515072,
+            "physical_blocks_in_use": 140,
+            "pool_blocks": 252,
+            "mapped_blocks": 140,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "repeat": 0,
+          "kind": "paged",
+          "prompt_tokens": 64,
+          "decode_steps": 8
+        },
+        {
+          "prefill_ms": 61.845399999583606,
+          "decode_ms_samples": [
+            59.24140000206535,
+            54.78810000204248,
+            56.70599999939441,
+            55.64289999892935,
+            55.8588999992935,
+            55.438800001866184,
+            56.427999999868916,
+            55.79010000292328
+          ],
+          "median_decode_ms": 55.82450000110839,
+          "final_cached_tokens": 72,
+          "allocated_delta_bytes": 16515584,
+          "peak_extra_allocated_bytes": 18654208,
+          "kv_bytes_per_token_all_layers": 114688,
+          "stats": {
+            "layers": 28,
+            "length": 72,
+            "block_size": 16,
+            "pool_tensor_bytes": 16515072,
+            "physical_blocks_in_use": 140,
+            "pool_blocks": 252,
+            "mapped_blocks": 140,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "repeat": 1,
+          "kind": "paged",
+          "prompt_tokens": 64,
+          "decode_steps": 8
+        },
+        {
+          "prefill_ms": 51.25219999899855,
+          "decode_ms_samples": [
+            47.17800000071293,
+            47.485900002357084,
+            47.420300001249416,
+            48.714800002926495,
+            47.21350000181701,
+            48.06309999912628,
+            47.418299996934365,
+            48.2157999977062
+          ],
+          "median_decode_ms": 47.45310000180325,
+          "final_cached_tokens": 72,
+          "allocated_delta_bytes": 8258048,
+          "peak_extra_allocated_bytes": 9323520,
+          "kv_bytes_per_token_all_layers": 114688,
+          "stats": {
+            "logical_kv_bytes": 8257536
+          },
+          "repeat": 1,
+          "kind": "dynamic",
+          "prompt_tokens": 64,
+          "decode_steps": 8
+        },
+        {
+          "prefill_ms": 50.48900000110734,
+          "decode_ms_samples": [
+            47.08840000239434,
+            47.31750000064494,
+            47.273199998016935,
+            47.116099998675054,
+            47.12239999935264,
+            47.15270000087912,
+            46.936799997638445,
+            46.78050000075018
+          ],
+          "median_decode_ms": 47.119249999013846,
+          "final_cached_tokens": 72,
+          "allocated_delta_bytes": 8258048,
+          "peak_extra_allocated_bytes": 9323520,
+          "kv_bytes_per_token_all_layers": 114688,
+          "stats": {
+            "logical_kv_bytes": 8257536
+          },
+          "repeat": 2,
+          "kind": "dynamic",
+          "prompt_tokens": 64,
+          "decode_steps": 8
+        },
+        {
+          "prefill_ms": 61.775599999236874,
+          "decode_ms_samples": [
+            54.84640000213403,
+            55.39450000287616,
+            55.883799999719486,
+            54.65090000143391,
+            54.73169999822858,
+            53.91280000185361,
+            54.369699999369914,
+            56.74110000109067
+          ],
+          "median_decode_ms": 54.789050000181305,
+          "final_cached_tokens": 72,
+          "allocated_delta_bytes": 16515584,
+          "peak_extra_allocated_bytes": 18654208,
+          "kv_bytes_per_token_all_layers": 114688,
+          "stats": {
+            "layers": 28,
+            "length": 72,
+            "block_size": 16,
+            "pool_tensor_bytes": 16515072,
+            "physical_blocks_in_use": 140,
+            "pool_blocks": 252,
+            "mapped_blocks": 140,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "repeat": 2,
+          "kind": "paged",
+          "prompt_tokens": 64,
+          "decode_steps": 8
+        }
+      ]
+    }
+  },
+  "parameters": {
+    "new_tokens": 32,
+    "block_sizes": [
+      4,
+      16,
+      32
+    ],
+    "logit_atol": 0.02,
+    "logit_rtol": 0.002,
+    "seed": 42,
+    "plan": "experiments/SMALL_MODEL_PLAN.md",
+    "chat_template_options": {
+      "enable_thinking": false
+    },
+    "decoding": "greedy regression, not a model-quality evaluation"
+  },
+  "boundary": "Real multi-layer GQA model with paged storage plus contiguous reconstruction. No native paged attention kernel or serving benchmark.",
+  "model": {
+    "model": "Qwen/Qwen3-0.6B",
+    "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+    "local_path": "models\\Qwen3-0.6B",
+    "files": {
+      "LICENSE": {
+        "bytes": 11343,
+        "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+        "expected_lfs_sha256": null
+      },
+      "README.md": {
+        "bytes": 13965,
+        "sha256": "1ab64a26fcb3b461423b89a433a8c858f1bf8d4086f979cbb3ff878d47cf20e9",
+        "expected_lfs_sha256": null
+      },
+      "config.json": {
+        "bytes": 726,
+        "sha256": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+        "expected_lfs_sha256": null
+      },
+      "generation_config.json": {
+        "bytes": 239,
+        "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+        "expected_lfs_sha256": null
+      },
+      "merges.txt": {
+        "bytes": 1671853,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "expected_lfs_sha256": null
+      },
+      "model.safetensors": {
+        "bytes": 1503300328,
+        "sha256": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b",
+        "expected_lfs_sha256": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b"
+      },
+      "tokenizer.json": {
+        "bytes": 11422654,
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "expected_lfs_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+      },
+      "tokenizer_config.json": {
+        "bytes": 9732,
+        "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+        "expected_lfs_sha256": null
+      },
+      "vocab.json": {
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "expected_lfs_sha256": null
+      }
+    },
+    "status": "verified"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "torch": "2.10.0+cu126",
+    "transformers": "4.57.6",
+    "cuda_build": "12.6",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "nvidia_smi_start": "name, driver_version, memory.total [MiB], memory.used [MiB], utilization.gpu [%]\r\nNVIDIA GeForce RTX 3070, 610.88, 8192 MiB, 1014 MiB, 7 %",
+    "model_parameter_count": 596049920,
+    "model_parameter_bytes": 1192099840,
+    "config": {
+      "vocab_size": 151936,
+      "max_position_embeddings": 40960,
+      "hidden_size": 1024,
+      "intermediate_size": 3072,
+      "num_hidden_layers": 28,
+      "num_attention_heads": 16,
+      "use_sliding_window": false,
+      "sliding_window": null,
+      "max_window_layers": 28,
+      "num_key_value_heads": 8,
+      "head_dim": 128,
+      "hidden_act": "silu",
+      "initializer_range": 0.02,
+      "rms_norm_eps": 1e-06,
+      "use_cache": true,
+      "rope_theta": 1000000,
+      "rope_scaling": null,
+      "attention_bias": false,
+      "attention_dropout": 0.0,
+      "layer_types": [
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention"
+      ],
+      "return_dict": true,
+      "output_hidden_states": false,
+      "torchscript": false,
+      "dtype": "float16",
+      "pruned_heads": {},
+      "tie_word_embeddings": true,
+      "chunk_size_feed_forward": 0,
+      "is_encoder_decoder": false,
+      "is_decoder": false,
+      "cross_attention_hidden_size": null,
+      "add_cross_attention": false,
+      "tie_encoder_decoder": false,
+      "architectures": [
+        "Qwen3ForCausalLM"
+      ],
+      "finetuning_task": null,
+      "id2label": {
+        "0": "LABEL_0",
+        "1": "LABEL_1"
+      },
+      "label2id": {
+        "LABEL_0": 0,
+        "LABEL_1": 1
+      },
+      "task_specific_params": null,
+      "problem_type": null,
+      "tokenizer_class": null,
+      "prefix": null,
+      "bos_token_id": 151643,
+      "pad_token_id": null,
+      "eos_token_id": 151645,
+      "sep_token_id": null,
+      "decoder_start_token_id": null,
+      "max_length": 20,
+      "min_length": 0,
+      "do_sample": false,
+      "early_stopping": false,
+      "num_beams": 1,
+      "temperature": 1.0,
+      "top_k": 50,
+      "top_p": 1.0,
+      "typical_p": 1.0,
+      "repetition_penalty": 1.0,
+      "length_penalty": 1.0,
+      "no_repeat_ngram_size": 0,
+      "encoder_no_repeat_ngram_size": 0,
+      "bad_words_ids": null,
+      "num_return_sequences": 1,
+      "output_scores": false,
+      "return_dict_in_generate": false,
+      "forced_bos_token_id": null,
+      "forced_eos_token_id": null,
+      "remove_invalid_values": false,
+      "exponential_decay_length_penalty": null,
+      "suppress_tokens": null,
+      "begin_suppress_tokens": null,
+      "num_beam_groups": 1,
+      "diversity_penalty": 0.0,
+      "_name_or_path": "E:\\AI-Infra\\PagedAttention\\models\\Qwen3-0.6B",
+      "transformers_version": "4.57.6",
+      "model_type": "qwen3",
+      "tf_legacy_loss": false,
+      "use_bfloat16": false,
+      "output_attentions": false
+    },
+    "nvidia_smi_end": "name, driver_version, memory.total [MiB], memory.used [MiB], utilization.gpu [%]\r\nNVIDIA GeForce RTX 3070, 610.88, 8192 MiB, 2349 MiB, 37 %"
+  },
+  "source_sha256": {
+    "experiments/SMALL_MODEL_PLAN.md": "699d9e623b7df29225d304736b8e300f9baedbea5ae4a8004cdeffe3fc9085d5",
+    "experiments/run_small_model.py": "c36f9531688ac904c4c1703caf7174cf7436d70a19892a8f9dcd0bc7e553cef9",
+    "experiments/model_paged_cache.py": "302ce559016eecd40542fd13c1756671defa05590a7e968c94ca3fe809aba172",
+    "experiments/prepare_small_model.py": "1eee0c2fe8998c566ccc81544652ed6ee7a82eb1eb95415161e4c4d490e96bc9",
+    "pyproject.toml": "09a16af31a91bde799b71a7c195d7f3b389685bcefb24558f2b9c72b2440cfd0",
+    "uv.lock": "511f554182e10eb79d7a0f67cf053a4c1064525bbe9469f647a1bf44d68f3132",
+    "uv.ps1": "16300f5d3ee8c8ed4f85fe350b3ce0fbeac7b6aa7307b9b6d5ea1d23ae68f098"
+  }
+}

@@ -1,0 +1,14 @@
+{"phase": "loading_model", "revision": "ad9f0ae0864d7fbcd1cd905e3c6c5b069cc8b562"}
+Traceback (most recent call last):
+  File "E:\AI-Infra\PagedAttention\experiments\run_small_model.py", line 423, in <module>
+    main()
+    ~~~~^^
+  File "E:\AI-Infra\PagedAttention\experiments\run_small_model.py", line 388, in main
+    result["experiments"]["E1"]["cases"].append(generation(model, tokenizer, ids, args.new_tokens))
+                                                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\AI-Infra\PagedAttention\experiments\run_small_model.py", line 103, in generation
+    logits = forward(model, ids if step == 0 else token, cache)
+  File "E:\AI-Infra\PagedAttention\experiments\run_small_model.py", line 59, in forward
+    assert torch.isfinite(logits).all(), "Nonfinite logits"
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+AssertionError: Nonfinite logits

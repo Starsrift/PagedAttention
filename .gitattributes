@@ -1,0 +1,12 @@
+# Preserve the exact bytes used by archived experiment evidence hashes.
+/experiments/results/** -text whitespace=cr-at-eol
+
+# Keep executable experiment sources and hashed plans stable across checkouts.
+/experiments/*.py text eol=lf
+/experiments/*.md text eol=lf
+/pyproject.toml text eol=lf
+/uv.lock text eol=lf
+/uv.ps1 text eol=lf
+/.python-version text eol=lf
+/simulator/*.html text eol=lf
+/.gitattributes text eol=lf

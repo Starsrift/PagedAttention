@@ -1,0 +1,42 @@
+{"phase": "loading_model", "revision": "c1899de289a04d12100db370d81485cdf75e47ca"}
+{"experiment": "E1", "status": "passed"}
+{"experiment": "E2", "B": 4, "T": 1, "status": "passed"}
+{"experiment": "E2", "B": 4, "T": 3, "status": "passed"}
+{"experiment": "E2", "B": 4, "T": 4, "status": "passed"}
+{"experiment": "E2", "B": 4, "T": 5, "status": "passed"}
+{"experiment": "E2", "B": 4, "T": 127, "status": "passed"}
+{"experiment": "E2", "B": 16, "T": 1, "status": "passed"}
+{"experiment": "E2", "B": 16, "T": 15, "status": "passed"}
+{"experiment": "E2", "B": 16, "T": 16, "status": "passed"}
+{"experiment": "E2", "B": 16, "T": 17, "status": "passed"}
+{"experiment": "E2", "B": 16, "T": 127, "status": "passed"}
+{"experiment": "E2", "B": 32, "T": 1, "status": "passed"}
+{"experiment": "E2", "B": 32, "T": 31, "status": "passed"}
+{"experiment": "E2", "B": 32, "T": 32, "status": "passed"}
+{"experiment": "E2", "B": 32, "T": 33, "status": "passed"}
+{"experiment": "E2", "B": 32, "T": 127, "status": "passed"}
+{"experiment": "E3", "B": 4, "prompt": 0, "tokens": 21, "status": "passed"}
+{"experiment": "E3", "B": 4, "prompt": 1, "tokens": 8, "status": "passed"}
+{"experiment": "E3", "B": 4, "prompt": 2, "tokens": 32, "status": "passed"}
+{"experiment": "E3", "B": 16, "prompt": 0, "tokens": 21, "status": "passed"}
+{"experiment": "E3", "B": 16, "prompt": 1, "tokens": 8, "status": "passed"}
+{"experiment": "E3", "B": 16, "prompt": 2, "tokens": 32, "status": "passed"}
+{"experiment": "E3", "B": 32, "prompt": 0, "tokens": 21, "status": "passed"}
+{"experiment": "E3", "B": 32, "prompt": 1, "tokens": 8, "status": "passed"}
+{"experiment": "E3", "B": 32, "prompt": 2, "tokens": 32, "status": "passed"}
+{"experiment": "E4", "B": 4, "T": 3, "status": "passed"}
+{"experiment": "E4", "B": 4, "T": 4, "status": "passed"}
+{"experiment": "E4", "B": 4, "T": 5, "status": "passed"}
+{"experiment": "E4", "B": 16, "T": 15, "status": "passed"}
+{"experiment": "E4", "B": 16, "T": 16, "status": "passed"}
+{"experiment": "E4", "B": 16, "T": 17, "status": "passed"}
+{"experiment": "E4", "B": 32, "T": 31, "status": "passed"}
+{"experiment": "E4", "B": 32, "T": 32, "status": "passed"}
+{"experiment": "E4", "B": 32, "T": 33, "status": "passed"}
+{"experiment": "E5", "repeat": 0, "kind": "dynamic"}
+{"experiment": "E5", "repeat": 0, "kind": "paged"}
+{"experiment": "E5", "repeat": 1, "kind": "paged"}
+{"experiment": "E5", "repeat": 1, "kind": "dynamic"}
+{"experiment": "E5", "repeat": 2, "kind": "dynamic"}
+{"experiment": "E5", "repeat": 2, "kind": "paged"}
+{"status": "passed", "output": "experiments\\runs\\2026-10-23-small-model-v1\\result.json"}

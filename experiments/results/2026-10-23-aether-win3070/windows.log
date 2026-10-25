@@ -1,0 +1,26 @@
+{"correctness_cases": 216}
+{"timing_case": 1, "dtype": "float32", "block_size": 4, "length": 128}
+{"timing_case": 2, "dtype": "float32", "block_size": 4, "length": 512}
+{"timing_case": 3, "dtype": "float32", "block_size": 4, "length": 1024}
+{"timing_case": 4, "dtype": "float32", "block_size": 4, "length": 2048}
+{"timing_case": 5, "dtype": "float32", "block_size": 16, "length": 128}
+{"timing_case": 6, "dtype": "float32", "block_size": 16, "length": 512}
+{"timing_case": 7, "dtype": "float32", "block_size": 16, "length": 1024}
+{"timing_case": 8, "dtype": "float32", "block_size": 16, "length": 2048}
+{"timing_case": 9, "dtype": "float32", "block_size": 32, "length": 128}
+{"timing_case": 10, "dtype": "float32", "block_size": 32, "length": 512}
+{"timing_case": 11, "dtype": "float32", "block_size": 32, "length": 1024}
+{"timing_case": 12, "dtype": "float32", "block_size": 32, "length": 2048}
+{"timing_case": 13, "dtype": "float16", "block_size": 4, "length": 128}
+{"timing_case": 14, "dtype": "float16", "block_size": 4, "length": 512}
+{"timing_case": 15, "dtype": "float16", "block_size": 4, "length": 1024}
+{"timing_case": 16, "dtype": "float16", "block_size": 4, "length": 2048}
+{"timing_case": 17, "dtype": "float16", "block_size": 16, "length": 128}
+{"timing_case": 18, "dtype": "float16", "block_size": 16, "length": 512}
+{"timing_case": 19, "dtype": "float16", "block_size": 16, "length": 1024}
+{"timing_case": 20, "dtype": "float16", "block_size": 16, "length": 2048}
+{"timing_case": 21, "dtype": "float16", "block_size": 32, "length": 128}
+{"timing_case": 22, "dtype": "float16", "block_size": 32, "length": 512}
+{"timing_case": 23, "dtype": "float16", "block_size": 32, "length": 1024}
+{"timing_case": 24, "dtype": "float16", "block_size": 32, "length": 2048}
+{"status": "passed", "output": "experiments\\runs\\2026-10-23-aether-win3070\\windows.json", "elapsed_seconds": 6.890374800000245}

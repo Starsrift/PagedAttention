@@ -1,0 +1,3433 @@
+{
+  "status": "passed",
+  "started_at": "2026-10-23T09:10:47.258684+08:00",
+  "experiments": {
+    "E1": {
+      "prompts": [
+        "用一句话解释什么是键值缓存。",
+        "What is the capital of France? Answer briefly.",
+        "请列出学习编程的两个建议。"
+      ],
+      "cases": [
+        {
+          "prompt_tokens": 14,
+          "generated_token_ids": [
+            106287,
+            3837,
+            107520,
+            30534,
+            104136,
+            106582,
+            60949,
+            25511,
+            99982,
+            24360,
+            1773,
+            101140,
+            3837,
+            35946,
+            49828,
+            114877,
+            100158,
+            101056,
+            47764,
+            105565,
+            101888,
+            99982,
+            24360,
+            107232,
+            1773,
+            99982,
+            24360,
+            20412,
+            104564,
+            72448,
+            15946,
+            102688
+          ],
+          "generated_text": "嗯，我现在要解释什么是键值缓存。首先，我得回想一下之前学过的关于缓存的知识。缓存是计算机系统中用来",
+          "cached_tokens": 45,
+          "status": "passed"
+        },
+        {
+          "prompt_tokens": 15,
+          "generated_token_ids": [
+            32313,
+            11,
+            773,
+            358,
+            1184,
+            311,
+            7071,
+            700,
+            279,
+            6722,
+            315,
+            9625,
+            13,
+            358,
+            6099,
+            429,
+            9625,
+            374,
+            264,
+            3146,
+            304,
+            4505,
+            11,
+            323,
+            432,
+            594,
+            3881,
+            369,
+            1660,
+            264,
+            3146,
+            448
+          ],
+          "generated_text": "Okay, so I need to figure out the capital of France. I remember that France is a country in Europe, and it's known for being a country with",
+          "cached_tokens": 46,
+          "status": "passed"
+        },
+        {
+          "prompt_tokens": 13,
+          "generated_token_ids": [
+            106287,
+            3837,
+            107520,
+            30534,
+            100134,
+            110569,
+            3837,
+            77288,
+            32664,
+            99487,
+            100178,
+            104037,
+            111968,
+            1773,
+            35946,
+            85106,
+            92133,
+            100369,
+            99692,
+            101898,
+            36407,
+            55286,
+            1773,
+            101140,
+            3837,
+            35946,
+            99730,
+            60726,
+            99794,
+            110569,
+            105549,
+            100032
+          ],
+          "generated_text": "嗯，我现在要学习编程，但对这个过程有点迷茫。我需要找两个好的建议来开始。首先，我应该先了解编程的基础知识",
+          "cached_tokens": 44,
+          "status": "passed"
+        }
+      ],
+      "status": "passed"
+    },
+    "E2": {
+      "status": "passed",
+      "cases": [
+        {
+          "block_size": 4,
+          "length": 1,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 1,
+            "block_size": 4,
+            "pool_tensor_bytes": 573440,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 4,
+          "length": 3,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 3,
+            "block_size": 4,
+            "pool_tensor_bytes": 573440,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 4,
+          "length": 4,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 4,
+            "block_size": 4,
+            "pool_tensor_bytes": 573440,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 4,
+          "length": 5,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": true,
+          "stats": {
+            "layers": 28,
+            "length": 5,
+            "block_size": 4,
+            "pool_tensor_bytes": 688128,
+            "physical_blocks_in_use": 56,
+            "pool_blocks": 168,
+            "mapped_blocks": 56,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 4,
+          "length": 127,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": true,
+          "stats": {
+            "layers": 28,
+            "length": 127,
+            "block_size": 4,
+            "pool_tensor_bytes": 4128768,
+            "physical_blocks_in_use": 896,
+            "pool_blocks": 1008,
+            "mapped_blocks": 896,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 16,
+          "length": 1,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 1,
+            "block_size": 16,
+            "pool_tensor_bytes": 2293760,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 16,
+          "length": 15,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 15,
+            "block_size": 16,
+            "pool_tensor_bytes": 2293760,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 16,
+          "length": 16,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 16,
+            "block_size": 16,
+            "pool_tensor_bytes": 2293760,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 16,
+          "length": 17,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": true,
+          "stats": {
+            "layers": 28,
+            "length": 17,
+            "block_size": 16,
+            "pool_tensor_bytes": 2752512,
+            "physical_blocks_in_use": 56,
+            "pool_blocks": 168,
+            "mapped_blocks": 56,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 16,
+          "length": 127,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": true,
+          "stats": {
+            "layers": 28,
+            "length": 127,
+            "block_size": 16,
+            "pool_tensor_bytes": 5505024,
+            "physical_blocks_in_use": 224,
+            "pool_blocks": 336,
+            "mapped_blocks": 224,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 32,
+          "length": 1,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 1,
+            "block_size": 32,
+            "pool_tensor_bytes": 4587520,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 32,
+          "length": 31,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 31,
+            "block_size": 32,
+            "pool_tensor_bytes": 4587520,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 32,
+          "length": 32,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": null,
+          "stats": {
+            "layers": 28,
+            "length": 32,
+            "block_size": 32,
+            "pool_tensor_bytes": 4587520,
+            "physical_blocks_in_use": 28,
+            "pool_blocks": 140,
+            "mapped_blocks": 28,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 32,
+          "length": 33,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": true,
+          "stats": {
+            "layers": 28,
+            "length": 33,
+            "block_size": 32,
+            "pool_tensor_bytes": 5505024,
+            "physical_blocks_in_use": 56,
+            "pool_blocks": 168,
+            "mapped_blocks": 56,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        },
+        {
+          "block_size": 32,
+          "length": 127,
+          "layers_checked": 28,
+          "bitwise_equal": true,
+          "negative_control_detected": true,
+          "stats": {
+            "layers": 28,
+            "length": 127,
+            "block_size": 32,
+            "pool_tensor_bytes": 7340032,
+            "physical_blocks_in_use": 112,
+            "pool_blocks": 224,
+            "mapped_blocks": 112,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "status": "passed"
+        }
+      ]
+    },
+    "E3": {
+      "status": "passed",
+      "cases": [
+        {
+          "block_size": 4,
+          "prompt_index": 0,
+          "prompt_tokens": 14,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.75,
+              "reference_token": 106287,
+              "paged_token": 106287
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.25,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 107520,
+              "paged_token": 107520
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.25,
+              "reference_token": 30534,
+              "paged_token": 30534
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 104136,
+              "paged_token": 104136
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.5,
+              "reference_token": 106582,
+              "paged_token": 106582
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.125,
+              "reference_token": 60949,
+              "paged_token": 60949
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.0,
+              "reference_token": 25511,
+              "paged_token": 25511
+            },
+            {
+              "step": 8,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 7.75,
+              "reference_token": 99982,
+              "paged_token": 99982
+            },
+            {
+              "step": 9,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 11.3125,
+              "reference_token": 24360,
+              "paged_token": 24360
+            },
+            {
+              "step": 10,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.625,
+              "reference_token": 1773,
+              "paged_token": 1773
+            },
+            {
+              "step": 11,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.5,
+              "reference_token": 101140,
+              "paged_token": 101140
+            },
+            {
+              "step": 12,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 4.75,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 13,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.375,
+              "reference_token": 35946,
+              "paged_token": 35946
+            },
+            {
+              "step": 14,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 49828,
+              "paged_token": 49828
+            },
+            {
+              "step": 15,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.75,
+              "reference_token": 114877,
+              "paged_token": 114877
+            },
+            {
+              "step": 16,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 6.75,
+              "reference_token": 100158,
+              "paged_token": 100158
+            },
+            {
+              "step": 17,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 101056,
+              "paged_token": 101056
+            },
+            {
+              "step": 18,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.375,
+              "reference_token": 47764,
+              "paged_token": 47764
+            },
+            {
+              "step": 19,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 105565,
+              "paged_token": 105565
+            },
+            {
+              "step": 20,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 101888,
+              "paged_token": 101888
+            },
+            {
+              "step": 21,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 4.0,
+              "reference_token": 99982,
+              "paged_token": 99982
+            },
+            {
+              "step": 22,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 11.875,
+              "reference_token": 24360,
+              "paged_token": 24360
+            },
+            {
+              "step": 23,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.625,
+              "reference_token": 107232,
+              "paged_token": 107232
+            },
+            {
+              "step": 24,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.625,
+              "reference_token": 1773,
+              "paged_token": 1773
+            },
+            {
+              "step": 25,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.6875,
+              "reference_token": 99982,
+              "paged_token": 99982
+            },
+            {
+              "step": 26,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.5,
+              "reference_token": 24360,
+              "paged_token": 24360
+            },
+            {
+              "step": 27,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 20412,
+              "paged_token": 20412
+            },
+            {
+              "step": 28,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.5,
+              "reference_token": 104564,
+              "paged_token": 104564
+            },
+            {
+              "step": 29,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.75,
+              "reference_token": 72448,
+              "paged_token": 72448
+            },
+            {
+              "step": 30,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 15946,
+              "paged_token": 15946
+            },
+            {
+              "step": 31,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.75,
+              "reference_token": 102688,
+              "paged_token": 102688
+            }
+          ],
+          "generated_token_ids": [
+            106287,
+            3837,
+            107520,
+            30534,
+            104136,
+            106582,
+            60949,
+            25511,
+            99982,
+            24360,
+            1773,
+            101140,
+            3837,
+            35946,
+            49828,
+            114877,
+            100158,
+            101056,
+            47764,
+            105565,
+            101888,
+            99982,
+            24360,
+            107232,
+            1773,
+            99982,
+            24360,
+            20412,
+            104564,
+            72448,
+            15946,
+            102688
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "嗯，我现在要解释什么是键值缓存。首先，我得回想一下之前学过的关于缓存的知识。缓存是计算机系统中用来",
+          "stats": {
+            "layers": 28,
+            "length": 45,
+            "block_size": 4,
+            "pool_tensor_bytes": 1835008,
+            "physical_blocks_in_use": 336,
+            "pool_blocks": 448,
+            "mapped_blocks": 336,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        },
+        {
+          "block_size": 4,
+          "prompt_index": 1,
+          "prompt_tokens": 15,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.375,
+              "reference_token": 32313,
+              "paged_token": 32313
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 14.4375,
+              "reference_token": 11,
+              "paged_token": 11
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.25,
+              "reference_token": 773,
+              "paged_token": 773
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.875,
+              "reference_token": 358,
+              "paged_token": 358
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.25,
+              "reference_token": 1184,
+              "paged_token": 1184
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 12.75,
+              "reference_token": 311,
+              "paged_token": 311
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.625,
+              "reference_token": 7071,
+              "paged_token": 7071
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 14.75,
+              "reference_token": 700,
+              "paged_token": 700
+            },
+            {
+              "step": 8,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.75,
+              "reference_token": 279,
+              "paged_token": 279
+            },
+            {
+              "step": 9,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 5.875,
+              "reference_token": 6722,
+              "paged_token": 6722
+            },
+            {
+              "step": 10,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 9.125,
+              "reference_token": 315,
+              "paged_token": 315
+            },
+            {
+              "step": 11,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 8.9375,
+              "reference_token": 9625,
+              "paged_token": 9625
+            },
+            {
+              "step": 12,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.375,
+              "reference_token": 13,
+              "paged_token": 13
+            },
+            {
+              "step": 13,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.625,
+              "reference_token": 358,
+              "paged_token": 358
+            },
+            {
+              "step": 14,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 6099,
+              "paged_token": 6099
+            },
+            {
+              "step": 15,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 429,
+              "paged_token": 429
+            },
+            {
+              "step": 16,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.6875,
+              "reference_token": 9625,
+              "paged_token": 9625
+            },
+            {
+              "step": 17,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.25,
+              "reference_token": 374,
+              "paged_token": 374
+            },
+            {
+              "step": 18,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.375,
+              "reference_token": 264,
+              "paged_token": 264
+            },
+            {
+              "step": 19,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.375,
+              "reference_token": 3146,
+              "paged_token": 3146
+            },
+            {
+              "step": 20,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.25,
+              "reference_token": 304,
+              "paged_token": 304
+            },
+            {
+              "step": 21,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.0,
+              "reference_token": 4505,
+              "paged_token": 4505
+            },
+            {
+              "step": 22,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.0,
+              "reference_token": 11,
+              "paged_token": 11
+            },
+            {
+              "step": 23,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.375,
+              "reference_token": 323,
+              "paged_token": 323
+            },
+            {
+              "step": 24,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.0,
+              "reference_token": 432,
+              "paged_token": 432
+            },
+            {
+              "step": 25,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.625,
+              "reference_token": 594,
+              "paged_token": 594
+            },
+            {
+              "step": 26,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 3881,
+              "paged_token": 3881
+            },
+            {
+              "step": 27,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.375,
+              "reference_token": 369,
+              "paged_token": 369
+            },
+            {
+              "step": 28,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 1660,
+              "paged_token": 1660
+            },
+            {
+              "step": 29,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.75,
+              "reference_token": 264,
+              "paged_token": 264
+            },
+            {
+              "step": 30,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 3146,
+              "paged_token": 3146
+            },
+            {
+              "step": 31,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 448,
+              "paged_token": 448
+            }
+          ],
+          "generated_token_ids": [
+            32313,
+            11,
+            773,
+            358,
+            1184,
+            311,
+            7071,
+            700,
+            279,
+            6722,
+            315,
+            9625,
+            13,
+            358,
+            6099,
+            429,
+            9625,
+            374,
+            264,
+            3146,
+            304,
+            4505,
+            11,
+            323,
+            432,
+            594,
+            3881,
+            369,
+            1660,
+            264,
+            3146,
+            448
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "Okay, so I need to figure out the capital of France. I remember that France is a country in Europe, and it's known for being a country with",
+          "stats": {
+            "layers": 28,
+            "length": 46,
+            "block_size": 4,
+            "pool_tensor_bytes": 1835008,
+            "physical_blocks_in_use": 336,
+            "pool_blocks": 448,
+            "mapped_blocks": 336,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        },
+        {
+          "block_size": 4,
+          "prompt_index": 2,
+          "prompt_tokens": 13,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.0,
+              "reference_token": 106287,
+              "paged_token": 106287
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.25,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.125,
+              "reference_token": 107520,
+              "paged_token": 107520
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 30534,
+              "paged_token": 30534
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.5,
+              "reference_token": 100134,
+              "paged_token": 100134
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 6.0625,
+              "reference_token": 110569,
+              "paged_token": 110569
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.875,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 77288,
+              "paged_token": 77288
+            },
+            {
+              "step": 8,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 32664,
+              "paged_token": 32664
+            },
+            {
+              "step": 9,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 99487,
+              "paged_token": 99487
+            },
+            {
+              "step": 10,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 100178,
+              "paged_token": 100178
+            },
+            {
+              "step": 11,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.75,
+              "reference_token": 104037,
+              "paged_token": 104037
+            },
+            {
+              "step": 12,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 111968,
+              "paged_token": 111968
+            },
+            {
+              "step": 13,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.0,
+              "reference_token": 1773,
+              "paged_token": 1773
+            },
+            {
+              "step": 14,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 35946,
+              "paged_token": 35946
+            },
+            {
+              "step": 15,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 85106,
+              "paged_token": 85106
+            },
+            {
+              "step": 16,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.0,
+              "reference_token": 92133,
+              "paged_token": 92133
+            },
+            {
+              "step": 17,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.25,
+              "reference_token": 100369,
+              "paged_token": 100369
+            },
+            {
+              "step": 18,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 99692,
+              "paged_token": 99692
+            },
+            {
+              "step": 19,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.625,
+              "reference_token": 101898,
+              "paged_token": 101898
+            },
+            {
+              "step": 20,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 36407,
+              "paged_token": 36407
+            },
+            {
+              "step": 21,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.0,
+              "reference_token": 55286,
+              "paged_token": 55286
+            },
+            {
+              "step": 22,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.5,
+              "reference_token": 1773,
+              "paged_token": 1773
+            },
+            {
+              "step": 23,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.3125,
+              "reference_token": 101140,
+              "paged_token": 101140
+            },
+            {
+              "step": 24,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 7.75,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 25,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.375,
+              "reference_token": 35946,
+              "paged_token": 35946
+            },
+            {
+              "step": 26,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 99730,
+              "paged_token": 99730
+            },
+            {
+              "step": 27,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.625,
+              "reference_token": 60726,
+              "paged_token": 60726
+            },
+            {
+              "step": 28,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 99794,
+              "paged_token": 99794
+            },
+            {
+              "step": 29,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.625,
+              "reference_token": 110569,
+              "paged_token": 110569
+            },
+            {
+              "step": 30,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.625,
+              "reference_token": 105549,
+              "paged_token": 105549
+            },
+            {
+              "step": 31,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.125,
+              "reference_token": 100032,
+              "paged_token": 100032
+            }
+          ],
+          "generated_token_ids": [
+            106287,
+            3837,
+            107520,
+            30534,
+            100134,
+            110569,
+            3837,
+            77288,
+            32664,
+            99487,
+            100178,
+            104037,
+            111968,
+            1773,
+            35946,
+            85106,
+            92133,
+            100369,
+            99692,
+            101898,
+            36407,
+            55286,
+            1773,
+            101140,
+            3837,
+            35946,
+            99730,
+            60726,
+            99794,
+            110569,
+            105549,
+            100032
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "嗯，我现在要学习编程，但对这个过程有点迷茫。我需要找两个好的建议来开始。首先，我应该先了解编程的基础知识",
+          "stats": {
+            "layers": 28,
+            "length": 44,
+            "block_size": 4,
+            "pool_tensor_bytes": 1835008,
+            "physical_blocks_in_use": 308,
+            "pool_blocks": 448,
+            "mapped_blocks": 308,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        },
+        {
+          "block_size": 16,
+          "prompt_index": 0,
+          "prompt_tokens": 14,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.75,
+              "reference_token": 106287,
+              "paged_token": 106287
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.25,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 107520,
+              "paged_token": 107520
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.25,
+              "reference_token": 30534,
+              "paged_token": 30534
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 104136,
+              "paged_token": 104136
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.5,
+              "reference_token": 106582,
+              "paged_token": 106582
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.125,
+              "reference_token": 60949,
+              "paged_token": 60949
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.0,
+              "reference_token": 25511,
+              "paged_token": 25511
+            },
+            {
+              "step": 8,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 7.75,
+              "reference_token": 99982,
+              "paged_token": 99982
+            },
+            {
+              "step": 9,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 11.3125,
+              "reference_token": 24360,
+              "paged_token": 24360
+            },
+            {
+              "step": 10,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.625,
+              "reference_token": 1773,
+              "paged_token": 1773
+            },
+            {
+              "step": 11,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.5,
+              "reference_token": 101140,
+              "paged_token": 101140
+            },
+            {
+              "step": 12,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 4.75,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 13,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.375,
+              "reference_token": 35946,
+              "paged_token": 35946
+            },
+            {
+              "step": 14,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 49828,
+              "paged_token": 49828
+            },
+            {
+              "step": 15,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.75,
+              "reference_token": 114877,
+              "paged_token": 114877
+            },
+            {
+              "step": 16,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 6.75,
+              "reference_token": 100158,
+              "paged_token": 100158
+            },
+            {
+              "step": 17,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 101056,
+              "paged_token": 101056
+            },
+            {
+              "step": 18,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.375,
+              "reference_token": 47764,
+              "paged_token": 47764
+            },
+            {
+              "step": 19,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 105565,
+              "paged_token": 105565
+            },
+            {
+              "step": 20,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 101888,
+              "paged_token": 101888
+            },
+            {
+              "step": 21,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 4.0,
+              "reference_token": 99982,
+              "paged_token": 99982
+            },
+            {
+              "step": 22,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 11.875,
+              "reference_token": 24360,
+              "paged_token": 24360
+            },
+            {
+              "step": 23,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.625,
+              "reference_token": 107232,
+              "paged_token": 107232
+            },
+            {
+              "step": 24,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.625,
+              "reference_token": 1773,
+              "paged_token": 1773
+            },
+            {
+              "step": 25,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.6875,
+              "reference_token": 99982,
+              "paged_token": 99982
+            },
+            {
+              "step": 26,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.5,
+              "reference_token": 24360,
+              "paged_token": 24360
+            },
+            {
+              "step": 27,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 20412,
+              "paged_token": 20412
+            },
+            {
+              "step": 28,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.5,
+              "reference_token": 104564,
+              "paged_token": 104564
+            },
+            {
+              "step": 29,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.75,
+              "reference_token": 72448,
+              "paged_token": 72448
+            },
+            {
+              "step": 30,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 15946,
+              "paged_token": 15946
+            },
+            {
+              "step": 31,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.75,
+              "reference_token": 102688,
+              "paged_token": 102688
+            }
+          ],
+          "generated_token_ids": [
+            106287,
+            3837,
+            107520,
+            30534,
+            104136,
+            106582,
+            60949,
+            25511,
+            99982,
+            24360,
+            1773,
+            101140,
+            3837,
+            35946,
+            49828,
+            114877,
+            100158,
+            101056,
+            47764,
+            105565,
+            101888,
+            99982,
+            24360,
+            107232,
+            1773,
+            99982,
+            24360,
+            20412,
+            104564,
+            72448,
+            15946,
+            102688
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "嗯，我现在要解释什么是键值缓存。首先，我得回想一下之前学过的关于缓存的知识。缓存是计算机系统中用来",
+          "stats": {
+            "layers": 28,
+            "length": 45,
+            "block_size": 16,
+            "pool_tensor_bytes": 3211264,
+            "physical_blocks_in_use": 84,
+            "pool_blocks": 196,
+            "mapped_blocks": 84,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        },
+        {
+          "block_size": 16,
+          "prompt_index": 1,
+          "prompt_tokens": 15,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.375,
+              "reference_token": 32313,
+              "paged_token": 32313
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 14.4375,
+              "reference_token": 11,
+              "paged_token": 11
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.25,
+              "reference_token": 773,
+              "paged_token": 773
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.875,
+              "reference_token": 358,
+              "paged_token": 358
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.25,
+              "reference_token": 1184,
+              "paged_token": 1184
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 12.75,
+              "reference_token": 311,
+              "paged_token": 311
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.625,
+              "reference_token": 7071,
+              "paged_token": 7071
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 14.75,
+              "reference_token": 700,
+              "paged_token": 700
+            },
+            {
+              "step": 8,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.75,
+              "reference_token": 279,
+              "paged_token": 279
+            },
+            {
+              "step": 9,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 5.875,
+              "reference_token": 6722,
+              "paged_token": 6722
+            },
+            {
+              "step": 10,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 9.125,
+              "reference_token": 315,
+              "paged_token": 315
+            },
+            {
+              "step": 11,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 8.9375,
+              "reference_token": 9625,
+              "paged_token": 9625
+            },
+            {
+              "step": 12,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.375,
+              "reference_token": 13,
+              "paged_token": 13
+            },
+            {
+              "step": 13,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.625,
+              "reference_token": 358,
+              "paged_token": 358
+            },
+            {
+              "step": 14,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 6099,
+              "paged_token": 6099
+            },
+            {
+              "step": 15,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 429,
+              "paged_token": 429
+            },
+            {
+              "step": 16,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.6875,
+              "reference_token": 9625,
+              "paged_token": 9625
+            },
+            {
+              "step": 17,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.25,
+              "reference_token": 374,
+              "paged_token": 374
+            },
+            {
+              "step": 18,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.375,
+              "reference_token": 264,
+              "paged_token": 264
+            },
+            {
+              "step": 19,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.375,
+              "reference_token": 3146,
+              "paged_token": 3146
+            },
+            {
+              "step": 20,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.25,
+              "reference_token": 304,
+              "paged_token": 304
+            },
+            {
+              "step": 21,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.0,
+              "reference_token": 4505,
+              "paged_token": 4505
+            },
+            {
+              "step": 22,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.0,
+              "reference_token": 11,
+              "paged_token": 11
+            },
+            {
+              "step": 23,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.375,
+              "reference_token": 323,
+              "paged_token": 323
+            },
+            {
+              "step": 24,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.0,
+              "reference_token": 432,
+              "paged_token": 432
+            },
+            {
+              "step": 25,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.625,
+              "reference_token": 594,
+              "paged_token": 594
+            },
+            {
+              "step": 26,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 3881,
+              "paged_token": 3881
+            },
+            {
+              "step": 27,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.375,
+              "reference_token": 369,
+              "paged_token": 369
+            },
+            {
+              "step": 28,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 1660,
+              "paged_token": 1660
+            },
+            {
+              "step": 29,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.75,
+              "reference_token": 264,
+              "paged_token": 264
+            },
+            {
+              "step": 30,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 3146,
+              "paged_token": 3146
+            },
+            {
+              "step": 31,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 448,
+              "paged_token": 448
+            }
+          ],
+          "generated_token_ids": [
+            32313,
+            11,
+            773,
+            358,
+            1184,
+            311,
+            7071,
+            700,
+            279,
+            6722,
+            315,
+            9625,
+            13,
+            358,
+            6099,
+            429,
+            9625,
+            374,
+            264,
+            3146,
+            304,
+            4505,
+            11,
+            323,
+            432,
+            594,
+            3881,
+            369,
+            1660,
+            264,
+            3146,
+            448
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "Okay, so I need to figure out the capital of France. I remember that France is a country in Europe, and it's known for being a country with",
+          "stats": {
+            "layers": 28,
+            "length": 46,
+            "block_size": 16,
+            "pool_tensor_bytes": 3211264,
+            "physical_blocks_in_use": 84,
+            "pool_blocks": 196,
+            "mapped_blocks": 84,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        },
+        {
+          "block_size": 16,
+          "prompt_index": 2,
+          "prompt_tokens": 13,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.0,
+              "reference_token": 106287,
+              "paged_token": 106287
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.25,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.125,
+              "reference_token": 107520,
+              "paged_token": 107520
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 30534,
+              "paged_token": 30534
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.5,
+              "reference_token": 100134,
+              "paged_token": 100134
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 6.0625,
+              "reference_token": 110569,
+              "paged_token": 110569
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.875,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 77288,
+              "paged_token": 77288
+            },
+            {
+              "step": 8,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 32664,
+              "paged_token": 32664
+            },
+            {
+              "step": 9,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 99487,
+              "paged_token": 99487
+            },
+            {
+              "step": 10,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 100178,
+              "paged_token": 100178
+            },
+            {
+              "step": 11,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.75,
+              "reference_token": 104037,
+              "paged_token": 104037
+            },
+            {
+              "step": 12,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 111968,
+              "paged_token": 111968
+            },
+            {
+              "step": 13,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.0,
+              "reference_token": 1773,
+              "paged_token": 1773
+            },
+            {
+              "step": 14,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 35946,
+              "paged_token": 35946
+            },
+            {
+              "step": 15,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 85106,
+              "paged_token": 85106
+            },
+            {
+              "step": 16,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.0,
+              "reference_token": 92133,
+              "paged_token": 92133
+            },
+            {
+              "step": 17,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.25,
+              "reference_token": 100369,
+              "paged_token": 100369
+            },
+            {
+              "step": 18,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 99692,
+              "paged_token": 99692
+            },
+            {
+              "step": 19,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.625,
+              "reference_token": 101898,
+              "paged_token": 101898
+            },
+            {
+              "step": 20,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 36407,
+              "paged_token": 36407
+            },
+            {
+              "step": 21,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.0,
+              "reference_token": 55286,
+              "paged_token": 55286
+            },
+            {
+              "step": 22,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.5,
+              "reference_token": 1773,
+              "paged_token": 1773
+            },
+            {
+              "step": 23,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.3125,
+              "reference_token": 101140,
+              "paged_token": 101140
+            },
+            {
+              "step": 24,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 7.75,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 25,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.375,
+              "reference_token": 35946,
+              "paged_token": 35946
+            },
+            {
+              "step": 26,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 99730,
+              "paged_token": 99730
+            },
+            {
+              "step": 27,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.625,
+              "reference_token": 60726,
+              "paged_token": 60726
+            },
+            {
+              "step": 28,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 99794,
+              "paged_token": 99794
+            },
+            {
+              "step": 29,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.625,
+              "reference_token": 110569,
+              "paged_token": 110569
+            },
+            {
+              "step": 30,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.625,
+              "reference_token": 105549,
+              "paged_token": 105549
+            },
+            {
+              "step": 31,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.125,
+              "reference_token": 100032,
+              "paged_token": 100032
+            }
+          ],
+          "generated_token_ids": [
+            106287,
+            3837,
+            107520,
+            30534,
+            100134,
+            110569,
+            3837,
+            77288,
+            32664,
+            99487,
+            100178,
+            104037,
+            111968,
+            1773,
+            35946,
+            85106,
+            92133,
+            100369,
+            99692,
+            101898,
+            36407,
+            55286,
+            1773,
+            101140,
+            3837,
+            35946,
+            99730,
+            60726,
+            99794,
+            110569,
+            105549,
+            100032
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "嗯，我现在要学习编程，但对这个过程有点迷茫。我需要找两个好的建议来开始。首先，我应该先了解编程的基础知识",
+          "stats": {
+            "layers": 28,
+            "length": 44,
+            "block_size": 16,
+            "pool_tensor_bytes": 3211264,
+            "physical_blocks_in_use": 84,
+            "pool_blocks": 196,
+            "mapped_blocks": 84,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        },
+        {
+          "block_size": 32,
+          "prompt_index": 0,
+          "prompt_tokens": 14,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.75,
+              "reference_token": 106287,
+              "paged_token": 106287
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.25,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 107520,
+              "paged_token": 107520
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.25,
+              "reference_token": 30534,
+              "paged_token": 30534
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 104136,
+              "paged_token": 104136
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.5,
+              "reference_token": 106582,
+              "paged_token": 106582
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.125,
+              "reference_token": 60949,
+              "paged_token": 60949
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.0,
+              "reference_token": 25511,
+              "paged_token": 25511
+            },
+            {
+              "step": 8,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 7.75,
+              "reference_token": 99982,
+              "paged_token": 99982
+            },
+            {
+              "step": 9,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 11.3125,
+              "reference_token": 24360,
+              "paged_token": 24360
+            },
+            {
+              "step": 10,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.625,
+              "reference_token": 1773,
+              "paged_token": 1773
+            },
+            {
+              "step": 11,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.5,
+              "reference_token": 101140,
+              "paged_token": 101140
+            },
+            {
+              "step": 12,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 4.75,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 13,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.375,
+              "reference_token": 35946,
+              "paged_token": 35946
+            },
+            {
+              "step": 14,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 49828,
+              "paged_token": 49828
+            },
+            {
+              "step": 15,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.75,
+              "reference_token": 114877,
+              "paged_token": 114877
+            },
+            {
+              "step": 16,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 6.75,
+              "reference_token": 100158,
+              "paged_token": 100158
+            },
+            {
+              "step": 17,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 101056,
+              "paged_token": 101056
+            },
+            {
+              "step": 18,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.375,
+              "reference_token": 47764,
+              "paged_token": 47764
+            },
+            {
+              "step": 19,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 105565,
+              "paged_token": 105565
+            },
+            {
+              "step": 20,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 101888,
+              "paged_token": 101888
+            },
+            {
+              "step": 21,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 4.0,
+              "reference_token": 99982,
+              "paged_token": 99982
+            },
+            {
+              "step": 22,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 11.875,
+              "reference_token": 24360,
+              "paged_token": 24360
+            },
+            {
+              "step": 23,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.625,
+              "reference_token": 107232,
+              "paged_token": 107232
+            },
+            {
+              "step": 24,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.625,
+              "reference_token": 1773,
+              "paged_token": 1773
+            },
+            {
+              "step": 25,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.6875,
+              "reference_token": 99982,
+              "paged_token": 99982
+            },
+            {
+              "step": 26,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.5,
+              "reference_token": 24360,
+              "paged_token": 24360
+            },
+            {
+              "step": 27,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 20412,
+              "paged_token": 20412
+            },
+            {
+              "step": 28,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.5,
+              "reference_token": 104564,
+              "paged_token": 104564
+            },
+            {
+              "step": 29,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.75,
+              "reference_token": 72448,
+              "paged_token": 72448
+            },
+            {
+              "step": 30,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 15946,
+              "paged_token": 15946
+            },
+            {
+              "step": 31,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.75,
+              "reference_token": 102688,
+              "paged_token": 102688
+            }
+          ],
+          "generated_token_ids": [
+            106287,
+            3837,
+            107520,
+            30534,
+            104136,
+            106582,
+            60949,
+            25511,
+            99982,
+            24360,
+            1773,
+            101140,
+            3837,
+            35946,
+            49828,
+            114877,
+            100158,
+            101056,
+            47764,
+            105565,
+            101888,
+            99982,
+            24360,
+            107232,
+            1773,
+            99982,
+            24360,
+            20412,
+            104564,
+            72448,
+            15946,
+            102688
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "嗯，我现在要解释什么是键值缓存。首先，我得回想一下之前学过的关于缓存的知识。缓存是计算机系统中用来",
+          "stats": {
+            "layers": 28,
+            "length": 45,
+            "block_size": 32,
+            "pool_tensor_bytes": 5505024,
+            "physical_blocks_in_use": 56,
+            "pool_blocks": 168,
+            "mapped_blocks": 56,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        },
+        {
+          "block_size": 32,
+          "prompt_index": 1,
+          "prompt_tokens": 15,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.375,
+              "reference_token": 32313,
+              "paged_token": 32313
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 14.4375,
+              "reference_token": 11,
+              "paged_token": 11
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.25,
+              "reference_token": 773,
+              "paged_token": 773
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.875,
+              "reference_token": 358,
+              "paged_token": 358
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.25,
+              "reference_token": 1184,
+              "paged_token": 1184
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 12.75,
+              "reference_token": 311,
+              "paged_token": 311
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.625,
+              "reference_token": 7071,
+              "paged_token": 7071
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 14.75,
+              "reference_token": 700,
+              "paged_token": 700
+            },
+            {
+              "step": 8,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.75,
+              "reference_token": 279,
+              "paged_token": 279
+            },
+            {
+              "step": 9,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 5.875,
+              "reference_token": 6722,
+              "paged_token": 6722
+            },
+            {
+              "step": 10,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 9.125,
+              "reference_token": 315,
+              "paged_token": 315
+            },
+            {
+              "step": 11,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 8.9375,
+              "reference_token": 9625,
+              "paged_token": 9625
+            },
+            {
+              "step": 12,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.375,
+              "reference_token": 13,
+              "paged_token": 13
+            },
+            {
+              "step": 13,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.625,
+              "reference_token": 358,
+              "paged_token": 358
+            },
+            {
+              "step": 14,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 6099,
+              "paged_token": 6099
+            },
+            {
+              "step": 15,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 429,
+              "paged_token": 429
+            },
+            {
+              "step": 16,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.6875,
+              "reference_token": 9625,
+              "paged_token": 9625
+            },
+            {
+              "step": 17,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.25,
+              "reference_token": 374,
+              "paged_token": 374
+            },
+            {
+              "step": 18,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.375,
+              "reference_token": 264,
+              "paged_token": 264
+            },
+            {
+              "step": 19,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.375,
+              "reference_token": 3146,
+              "paged_token": 3146
+            },
+            {
+              "step": 20,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.25,
+              "reference_token": 304,
+              "paged_token": 304
+            },
+            {
+              "step": 21,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.0,
+              "reference_token": 4505,
+              "paged_token": 4505
+            },
+            {
+              "step": 22,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.0,
+              "reference_token": 11,
+              "paged_token": 11
+            },
+            {
+              "step": 23,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.375,
+              "reference_token": 323,
+              "paged_token": 323
+            },
+            {
+              "step": 24,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.0,
+              "reference_token": 432,
+              "paged_token": 432
+            },
+            {
+              "step": 25,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.625,
+              "reference_token": 594,
+              "paged_token": 594
+            },
+            {
+              "step": 26,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 3881,
+              "paged_token": 3881
+            },
+            {
+              "step": 27,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.375,
+              "reference_token": 369,
+              "paged_token": 369
+            },
+            {
+              "step": 28,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 1660,
+              "paged_token": 1660
+            },
+            {
+              "step": 29,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.75,
+              "reference_token": 264,
+              "paged_token": 264
+            },
+            {
+              "step": 30,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 3146,
+              "paged_token": 3146
+            },
+            {
+              "step": 31,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 448,
+              "paged_token": 448
+            }
+          ],
+          "generated_token_ids": [
+            32313,
+            11,
+            773,
+            358,
+            1184,
+            311,
+            7071,
+            700,
+            279,
+            6722,
+            315,
+            9625,
+            13,
+            358,
+            6099,
+            429,
+            9625,
+            374,
+            264,
+            3146,
+            304,
+            4505,
+            11,
+            323,
+            432,
+            594,
+            3881,
+            369,
+            1660,
+            264,
+            3146,
+            448
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "Okay, so I need to figure out the capital of France. I remember that France is a country in Europe, and it's known for being a country with",
+          "stats": {
+            "layers": 28,
+            "length": 46,
+            "block_size": 32,
+            "pool_tensor_bytes": 5505024,
+            "physical_blocks_in_use": 56,
+            "pool_blocks": 168,
+            "mapped_blocks": 56,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        },
+        {
+          "block_size": 32,
+          "prompt_index": 2,
+          "prompt_tokens": 13,
+          "step_errors": [
+            {
+              "step": 0,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.0,
+              "reference_token": 106287,
+              "paged_token": 106287
+            },
+            {
+              "step": 1,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 10.25,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 2,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.125,
+              "reference_token": 107520,
+              "paged_token": 107520
+            },
+            {
+              "step": 3,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 30534,
+              "paged_token": 30534
+            },
+            {
+              "step": 4,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.5,
+              "reference_token": 100134,
+              "paged_token": 100134
+            },
+            {
+              "step": 5,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 6.0625,
+              "reference_token": 110569,
+              "paged_token": 110569
+            },
+            {
+              "step": 6,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.875,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 7,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 77288,
+              "paged_token": 77288
+            },
+            {
+              "step": 8,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 32664,
+              "paged_token": 32664
+            },
+            {
+              "step": 9,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.875,
+              "reference_token": 99487,
+              "paged_token": 99487
+            },
+            {
+              "step": 10,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 100178,
+              "paged_token": 100178
+            },
+            {
+              "step": 11,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.75,
+              "reference_token": 104037,
+              "paged_token": 104037
+            },
+            {
+              "step": 12,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 111968,
+              "paged_token": 111968
+            },
+            {
+              "step": 13,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.0,
+              "reference_token": 1773,
+              "paged_token": 1773
+            },
+            {
+              "step": 14,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 35946,
+              "paged_token": 35946
+            },
+            {
+              "step": 15,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 85106,
+              "paged_token": 85106
+            },
+            {
+              "step": 16,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.0,
+              "reference_token": 92133,
+              "paged_token": 92133
+            },
+            {
+              "step": 17,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.25,
+              "reference_token": 100369,
+              "paged_token": 100369
+            },
+            {
+              "step": 18,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 99692,
+              "paged_token": 99692
+            },
+            {
+              "step": 19,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 3.625,
+              "reference_token": 101898,
+              "paged_token": 101898
+            },
+            {
+              "step": 20,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.125,
+              "reference_token": 36407,
+              "paged_token": 36407
+            },
+            {
+              "step": 21,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.0,
+              "reference_token": 55286,
+              "paged_token": 55286
+            },
+            {
+              "step": 22,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.5,
+              "reference_token": 1773,
+              "paged_token": 1773
+            },
+            {
+              "step": 23,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.3125,
+              "reference_token": 101140,
+              "paged_token": 101140
+            },
+            {
+              "step": 24,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 7.75,
+              "reference_token": 3837,
+              "paged_token": 3837
+            },
+            {
+              "step": 25,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 2.375,
+              "reference_token": 35946,
+              "paged_token": 35946
+            },
+            {
+              "step": 26,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.25,
+              "reference_token": 99730,
+              "paged_token": 99730
+            },
+            {
+              "step": 27,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.625,
+              "reference_token": 60726,
+              "paged_token": 60726
+            },
+            {
+              "step": 28,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.5,
+              "reference_token": 99794,
+              "paged_token": 99794
+            },
+            {
+              "step": 29,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.625,
+              "reference_token": 110569,
+              "paged_token": 110569
+            },
+            {
+              "step": 30,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 0.625,
+              "reference_token": 105549,
+              "paged_token": 105549
+            },
+            {
+              "step": 31,
+              "max_abs_logit_error": 0.0,
+              "top2_margin": 1.125,
+              "reference_token": 100032,
+              "paged_token": 100032
+            }
+          ],
+          "generated_token_ids": [
+            106287,
+            3837,
+            107520,
+            30534,
+            100134,
+            110569,
+            3837,
+            77288,
+            32664,
+            99487,
+            100178,
+            104037,
+            111968,
+            1773,
+            35946,
+            85106,
+            92133,
+            100369,
+            99692,
+            101898,
+            36407,
+            55286,
+            1773,
+            101140,
+            3837,
+            35946,
+            99730,
+            60726,
+            99794,
+            110569,
+            105549,
+            100032
+          ],
+          "status": "passed",
+          "all_tokens_equal": true,
+          "max_abs_logit_error": 0.0,
+          "generated_text": "嗯，我现在要学习编程，但对这个过程有点迷茫。我需要找两个好的建议来开始。首先，我应该先了解编程的基础知识",
+          "stats": {
+            "layers": 28,
+            "length": 44,
+            "block_size": 32,
+            "pool_tensor_bytes": 5505024,
+            "physical_blocks_in_use": 56,
+            "pool_blocks": 168,
+            "mapped_blocks": 56,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          }
+        }
+      ]
+    },
+    "E4": {
+      "status": "passed",
+      "cases": [
+        {
+          "block_size": 4,
+          "prefix_tokens": 3,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 56,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        },
+        {
+          "block_size": 4,
+          "prefix_tokens": 4,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 0,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        },
+        {
+          "block_size": 4,
+          "prefix_tokens": 5,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 56,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        },
+        {
+          "block_size": 16,
+          "prefix_tokens": 15,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 56,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        },
+        {
+          "block_size": 16,
+          "prefix_tokens": 16,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 0,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        },
+        {
+          "block_size": 16,
+          "prefix_tokens": 17,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 56,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        },
+        {
+          "block_size": 32,
+          "prefix_tokens": 31,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 56,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        },
+        {
+          "block_size": 32,
+          "prefix_tokens": 32,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 0,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        },
+        {
+          "block_size": 32,
+          "prefix_tokens": 33,
+          "branch_max_abs_logit_errors": [
+            0.0,
+            0.0
+          ],
+          "cow_copies_all_layers": 56,
+          "all_blocks_reclaimed": true,
+          "status": "passed"
+        }
+      ],
+      "oom": {
+        "layers_checked": 28,
+        "allocation_failure_preserved_state": true,
+        "scope": "per-layer shared-tail allocation failure, not whole-forward atomicity",
+        "status": "passed"
+      }
+    },
+    "E5": {
+      "status": "passed",
+      "cases": [
+        {
+          "prefill_ms": 40.52959999899031,
+          "decode_ms_samples": [
+            40.534600000682985,
+            40.67800000120769,
+            40.386900000157766,
+            40.45200000109617,
+            40.49419999864767,
+            40.52900000169757,
+            40.04069999791682,
+            40.35680000015418
+          ],
+          "median_decode_ms": 40.47309999987192,
+          "final_cached_tokens": 72,
+          "allocated_delta_bytes": 2064896,
+          "peak_extra_allocated_bytes": 8266752,
+          "kv_bytes_per_token_all_layers": 28672,
+          "stats": {
+            "logical_kv_bytes": 2064384
+          },
+          "repeat": 0,
+          "kind": "dynamic",
+          "prompt_tokens": 64,
+          "decode_steps": 8
+        },
+        {
+          "prefill_ms": 51.04339999888907,
+          "decode_ms_samples": [
+            47.91770000156248,
+            46.936400001868606,
+            47.038000000611646,
+            48.2451999996556,
+            47.55790000126581,
+            47.65860000043176,
+            47.272799998609116,
+            47.311900001659524
+          ],
+          "median_decode_ms": 47.434900001462665,
+          "final_cached_tokens": 72,
+          "allocated_delta_bytes": 4129280,
+          "peak_extra_allocated_bytes": 10560512,
+          "kv_bytes_per_token_all_layers": 28672,
+          "stats": {
+            "layers": 28,
+            "length": 72,
+            "block_size": 16,
+            "pool_tensor_bytes": 4128768,
+            "physical_blocks_in_use": 140,
+            "pool_blocks": 252,
+            "mapped_blocks": 140,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "repeat": 0,
+          "kind": "paged",
+          "prompt_tokens": 64,
+          "decode_steps": 8
+        },
+        {
+          "prefill_ms": 52.22169999979087,
+          "decode_ms_samples": [
+            46.796599999652244,
+            47.08550000214018,
+            47.30750000089756,
+            46.11520000253222,
+            46.43940000096336,
+            48.018000001320615,
+            47.468799999478506,
+            46.42969999986235
+          ],
+          "median_decode_ms": 46.94105000089621,
+          "final_cached_tokens": 72,
+          "allocated_delta_bytes": 4129280,
+          "peak_extra_allocated_bytes": 10560512,
+          "kv_bytes_per_token_all_layers": 28672,
+          "stats": {
+            "layers": 28,
+            "length": 72,
+            "block_size": 16,
+            "pool_tensor_bytes": 4128768,
+            "physical_blocks_in_use": 140,
+            "pool_blocks": 252,
+            "mapped_blocks": 140,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "repeat": 1,
+          "kind": "paged",
+          "prompt_tokens": 64,
+          "decode_steps": 8
+        },
+        {
+          "prefill_ms": 41.088600002694875,
+          "decode_ms_samples": [
+            41.591700002754806,
+            41.6432000019995,
+            41.58520000055432,
+            41.5130000001227,
+            40.64460000154213,
+            40.81850000147824,
+            40.743000001384644,
+            40.774599998258054
+          ],
+          "median_decode_ms": 41.16575000080047,
+          "final_cached_tokens": 72,
+          "allocated_delta_bytes": 2064896,
+          "peak_extra_allocated_bytes": 8266752,
+          "kv_bytes_per_token_all_layers": 28672,
+          "stats": {
+            "logical_kv_bytes": 2064384
+          },
+          "repeat": 1,
+          "kind": "dynamic",
+          "prompt_tokens": 64,
+          "decode_steps": 8
+        },
+        {
+          "prefill_ms": 40.68399999960093,
+          "decode_ms_samples": [
+            41.59570000047097,
+            40.588100000604754,
+            40.9153000000515,
+            40.203200001997175,
+            41.30280000026687,
+            40.85149999809801,
+            40.543900002376176,
+            40.51940000135801
+          ],
+          "median_decode_ms": 40.71979999935138,
+          "final_cached_tokens": 72,
+          "allocated_delta_bytes": 2064896,
+          "peak_extra_allocated_bytes": 8266752,
+          "kv_bytes_per_token_all_layers": 28672,
+          "stats": {
+            "logical_kv_bytes": 2064384
+          },
+          "repeat": 2,
+          "kind": "dynamic",
+          "prompt_tokens": 64,
+          "decode_steps": 8
+        },
+        {
+          "prefill_ms": 50.580099999933736,
+          "decode_ms_samples": [
+            47.56750000160537,
+            47.69080000187387,
+            47.955300000467105,
+            46.35789999883855,
+            47.623700000258395,
+            48.08240000056685,
+            47.24939999869093,
+            46.95680000077118
+          ],
+          "median_decode_ms": 47.59560000093188,
+          "final_cached_tokens": 72,
+          "allocated_delta_bytes": 4129280,
+          "peak_extra_allocated_bytes": 10560512,
+          "kv_bytes_per_token_all_layers": 28672,
+          "stats": {
+            "layers": 28,
+            "length": 72,
+            "block_size": 16,
+            "pool_tensor_bytes": 4128768,
+            "physical_blocks_in_use": 140,
+            "pool_blocks": 252,
+            "mapped_blocks": 140,
+            "cow_copies": 0,
+            "persistent_contiguous_shadow": false
+          },
+          "repeat": 2,
+          "kind": "paged",
+          "prompt_tokens": 64,
+          "decode_steps": 8
+        }
+      ]
+    }
+  },
+  "parameters": {
+    "new_tokens": 32,
+    "dtype": "bfloat16",
+    "block_sizes": [
+      4,
+      16,
+      32
+    ],
+    "logit_atol": 0.02,
+    "logit_rtol": 0.002,
+    "seed": 42,
+    "plan": "experiments/DEEPSEEK_PLAN.md",
+    "chat_template_options": {},
+    "decoding": "greedy regression, not a model-quality evaluation"
+  },
+  "boundary": "Real multi-layer GQA model with paged storage plus contiguous reconstruction. No native paged attention kernel or serving benchmark.",
+  "model": {
+    "model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    "revision": "ad9f0ae0864d7fbcd1cd905e3c6c5b069cc8b562",
+    "local_path": "models\\DeepSeek-R1-Distill-Qwen-1.5B",
+    "files": {
+      "LICENSE": {
+        "bytes": 1064,
+        "sha256": "1c8f573e830ca9b3ebfeb7ace1823146e22b66f99ee223840e7637c9e745e1c7",
+        "expected_lfs_sha256": null
+      },
+      "README.md": {
+        "bytes": 15994,
+        "sha256": "d26d26ddb518fee60c6c6bf7a708bd751b1619d93a4944f188143693d956c77f",
+        "expected_lfs_sha256": null
+      },
+      "config.json": {
+        "bytes": 679,
+        "sha256": "37bd455e9679d2959536270fed49d25cc7c290a64f6e52abb97c71345a9cee41",
+        "expected_lfs_sha256": null
+      },
+      "generation_config.json": {
+        "bytes": 181,
+        "sha256": "72cbec1015da9ed03ad025483005cbf6481403abf947adfd54e504d1a66a2126",
+        "expected_lfs_sha256": null
+      },
+      "model.safetensors": {
+        "bytes": 3554214621,
+        "sha256": "58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945",
+        "expected_lfs_sha256": "58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945"
+      },
+      "tokenizer.json": {
+        "bytes": 7031660,
+        "sha256": "88145e3c3249adc2546ede277e9819d6e405e19072456e4b521cbc724bd60773",
+        "expected_lfs_sha256": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 3071,
+        "sha256": "8ac8c85fb242563c2260baec0909debd69d718af6a0b3d90e6cab62b4d341cd5",
+        "expected_lfs_sha256": null
+      }
+    },
+    "status": "verified"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "torch": "2.10.0+cu126",
+    "transformers": "4.57.6",
+    "cuda_build": "12.6",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "nvidia_smi_start": "name, driver_version, memory.total [MiB], memory.used [MiB], utilization.gpu [%]\r\nNVIDIA GeForce RTX 3070, 610.88, 8192 MiB, 980 MiB, 10 %",
+    "model_parameter_count": 1777088000,
+    "model_parameter_bytes": 3554176000,
+    "config": {
+      "vocab_size": 151936,
+      "max_position_embeddings": 131072,
+      "hidden_size": 1536,
+      "intermediate_size": 8960,
+      "num_hidden_layers": 28,
+      "num_attention_heads": 12,
+      "use_sliding_window": false,
+      "sliding_window": null,
+      "max_window_layers": 21,
+      "num_key_value_heads": 2,
+      "hidden_act": "silu",
+      "initializer_range": 0.02,
+      "rms_norm_eps": 1e-06,
+      "use_cache": true,
+      "rope_theta": 10000,
+      "rope_scaling": null,
+      "attention_dropout": 0.0,
+      "layer_types": [
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention",
+        "full_attention"
+      ],
+      "return_dict": true,
+      "output_hidden_states": false,
+      "torchscript": false,
+      "dtype": "bfloat16",
+      "pruned_heads": {},
+      "tie_word_embeddings": false,
+      "chunk_size_feed_forward": 0,
+      "is_encoder_decoder": false,
+      "is_decoder": false,
+      "cross_attention_hidden_size": null,
+      "add_cross_attention": false,
+      "tie_encoder_decoder": false,
+      "architectures": [
+        "Qwen2ForCausalLM"
+      ],
+      "finetuning_task": null,
+      "id2label": {
+        "0": "LABEL_0",
+        "1": "LABEL_1"
+      },
+      "label2id": {
+        "LABEL_0": 0,
+        "LABEL_1": 1
+      },
+      "task_specific_params": null,
+      "problem_type": null,
+      "tokenizer_class": null,
+      "prefix": null,
+      "bos_token_id": 151643,
+      "pad_token_id": null,
+      "eos_token_id": 151643,
+      "sep_token_id": null,
+      "decoder_start_token_id": null,
+      "max_length": 20,
+      "min_length": 0,
+      "do_sample": false,
+      "early_stopping": false,
+      "num_beams": 1,
+      "temperature": 1.0,
+      "top_k": 50,
+      "top_p": 1.0,
+      "typical_p": 1.0,
+      "repetition_penalty": 1.0,
+      "length_penalty": 1.0,
+      "no_repeat_ngram_size": 0,
+      "encoder_no_repeat_ngram_size": 0,
+      "bad_words_ids": null,
+      "num_return_sequences": 1,
+      "output_scores": false,
+      "return_dict_in_generate": false,
+      "forced_bos_token_id": null,
+      "forced_eos_token_id": null,
+      "remove_invalid_values": false,
+      "exponential_decay_length_penalty": null,
+      "suppress_tokens": null,
+      "begin_suppress_tokens": null,
+      "num_beam_groups": 1,
+      "diversity_penalty": 0.0,
+      "_name_or_path": "models\\DeepSeek-R1-Distill-Qwen-1.5B",
+      "transformers_version": "4.57.6",
+      "model_type": "qwen2",
+      "use_mrope": false,
+      "tf_legacy_loss": false,
+      "use_bfloat16": false,
+      "output_attentions": false
+    },
+    "nvidia_smi_end": "name, driver_version, memory.total [MiB], memory.used [MiB], utilization.gpu [%]\r\nNVIDIA GeForce RTX 3070, 610.88, 8192 MiB, 4778 MiB, 35 %"
+  },
+  "source_sha256": {
+    "experiments/DEEPSEEK_PLAN.md": "2f0179a2552bbeb41393f10288e0060e2053b4847d177955c0287669266e688b",
+    "experiments/run_small_model.py": "54747f2b00d7b1bbe67664477efc1ffb2065e07223a4c82fe5a61360f4753904",
+    "experiments/model_paged_cache.py": "302ce559016eecd40542fd13c1756671defa05590a7e968c94ca3fe809aba172",
+    "experiments/prepare_small_model.py": "1eee0c2fe8998c566ccc81544652ed6ee7a82eb1eb95415161e4c4d490e96bc9",
+    "pyproject.toml": "09a16af31a91bde799b71a7c195d7f3b389685bcefb24558f2b9c72b2440cfd0",
+    "uv.lock": "511f554182e10eb79d7a0f67cf053a4c1064525bbe9469f647a1bf44d68f3132",
+    "uv.ps1": "16300f5d3ee8c8ed4f85fe350b3ce0fbeac7b6aa7307b9b6d5ea1d23ae68f098"
+  }
+}

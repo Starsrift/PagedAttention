@@ -1,0 +1,68 @@
+{
+  "status": "verified",
+  "BF16_status": "passed",
+  "model_revision": "ad9f0ae0864d7fbcd1cd905e3c6c5b069cc8b562",
+  "source_checks": {
+    "experiments/DEEPSEEK_PLAN.md": true,
+    "experiments/run_small_model.py": true,
+    "experiments/model_paged_cache.py": true,
+    "experiments/prepare_small_model.py": true,
+    "pyproject.toml": true,
+    "uv.lock": true,
+    "uv.ps1": true
+  },
+  "historical_runs": {
+    "fp16-attempt": {
+      "status": "failed",
+      "source_checks": {
+        "experiments/DEEPSEEK_PLAN.md": true,
+        "experiments/run_small_model.py": true,
+        "experiments/model_paged_cache.py": true,
+        "experiments/prepare_small_model.py": true,
+        "pyproject.toml": true,
+        "uv.lock": true,
+        "uv.ps1": true
+      }
+    },
+    "qwen-regression": {
+      "status": "passed",
+      "source_checks": {
+        "experiments/SMALL_MODEL_PLAN.md": true,
+        "experiments/run_small_model.py": true,
+        "experiments/model_paged_cache.py": true,
+        "experiments/prepare_small_model.py": true,
+        "pyproject.toml": true,
+        "uv.lock": true,
+        "uv.ps1": true
+      }
+    }
+  },
+  "sha256": {
+    "experiments/results/2026-10-23-deepseek-15b-win3070/experiment-model-manifest.json": "9fe50ab1bae645ed617204dba9dd86701b5d085ac3dccf3c2083bb305e6dbea3",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/packages.json": "c3515d93bbc9559bd339aef4be648670c4f014875b724edab10ffce8ed45339e",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/README.md": "7a5fc088ec323a25830fd74e90e8a3b60158194e73ceab75d626427d6134d0c5",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/result.json": "3f640a113ef84243d50850e856b929dd9c4774511c7b03876bee8af5d69a6398",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/run.log": "decc21ceea1c53953cbbfb8c27dc6cfc21afd0757ba0d87d925ade8e5427f61d",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/fp16-attempt/precision-diagnostic.json": "10f75e4a2ff08b76fbae1123c9249c28f5edd4a89c8ccc7ce8e21e6decd5be0e",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/fp16-attempt/precision-diagnostic.log": "e0e6a259f59d877ab5891019f583cf81ad304a4a877e253024cfa25a9ea1e3ff",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/fp16-attempt/result.json": "1c6573e083864babe6a9300d6556cc3705fa98c599ec689385bbaf0fb3011669",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/fp16-attempt/run.log": "8c001cbe7edab04ee981dd1d1fd592b9ed0bc5b1c3efc682c5e421c8a266ec9c",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/qwen-regression/result.json": "876b922ec46ac5d59055cf2771e3c0d6fea8094a6ea3aae201fe5ecd60aab16b",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/qwen-regression/run.log": "4366ea3b6c0f727ee03edbd35c64ef81b12c9dc4288b4c199fe84ba281141c68",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/source/pyproject.toml": "09a16af31a91bde799b71a7c195d7f3b389685bcefb24558f2b9c72b2440cfd0",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/source/uv.lock": "511f554182e10eb79d7a0f67cf053a4c1064525bbe9469f647a1bf44d68f3132",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/source/uv.ps1": "16300f5d3ee8c8ed4f85fe350b3ce0fbeac7b6aa7307b9b6d5ea1d23ae68f098",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/source/experiments/DEEPSEEK_PLAN.md": "2f0179a2552bbeb41393f10288e0060e2053b4847d177955c0287669266e688b",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/source/experiments/diagnose_deepseek_precision.py": "cbc316e6a855249fa98bfdcc11bcfd2e7624dd9a9155e3a5aa8e4b1629f71262",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/source/experiments/model_paged_cache.py": "302ce559016eecd40542fd13c1756671defa05590a7e968c94ca3fe809aba172",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/source/experiments/prepare_small_model.py": "1eee0c2fe8998c566ccc81544652ed6ee7a82eb1eb95415161e4c4d490e96bc9",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/source/experiments/run_small_model.py": "54747f2b00d7b1bbe67664477efc1ffb2065e07223a4c82fe5a61360f4753904",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/qwen-regression/source/prepare_small_model.py": "1eee0c2fe8998c566ccc81544652ed6ee7a82eb1eb95415161e4c4d490e96bc9",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/qwen-regression/source/run_small_model.py": "c36f9531688ac904c4c1703caf7174cf7436d70a19892a8f9dcd0bc7e553cef9",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/fp16-attempt/source/DEEPSEEK_PLAN.md": "e1ba2b346bb0a6305dd4ae617256774016593af787c295472670450ed6d9ef50",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/fp16-attempt/source/prepare_small_model.py": "1eee0c2fe8998c566ccc81544652ed6ee7a82eb1eb95415161e4c4d490e96bc9",
+    "experiments/results/2026-10-23-deepseek-15b-win3070/fp16-attempt/source/run_small_model.py": "034c8062599155e0f5609c71e72cd5b1c7b4a4f4a0a3aa2e8d17a36ea5c5e7cc",
+    "experiments/DEEPSEEK_PLAN.md": "2f0179a2552bbeb41393f10288e0060e2053b4847d177955c0287669266e688b",
+    "experiments/DEEPSEEK_RESULTS.md": "89cd6e96b26086b5e7568e9640ccc26fadfe2d8f1a9b93bdece01c3deb960744"
+  }
+}

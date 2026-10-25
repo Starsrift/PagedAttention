@@ -14,9 +14,9 @@ import torch
 
 class Pool:
     """Experimental extension: reference counting and real tensor copy-on-write."""
-    def __init__(self, blocks, size, dim):
+    def __init__(self, blocks, size, dim, device='cpu', dtype=torch.float32):
         self.size = size
-        self.k = torch.zeros(blocks, size, dim)
+        self.k = torch.zeros(blocks, size, dim, device=device, dtype=dtype)
         self.v = torch.zeros_like(self.k)
         self.refs = [0] * blocks
         self.free = list(range(blocks))
@@ -77,7 +77,7 @@ class Seq:
 
 def original_tests(root, device):
     ns = {}
-    notebook = json.loads((root / 'PagedAttention_Tutorial.ipynb').read_text())
+    notebook = json.loads((root / 'PagedAttention_Tutorial.ipynb').read_text(encoding='utf-8'))
     with contextlib.redirect_stdout(io.StringIO()):
         for cell in notebook['cells']:
             if cell['cell_type'] == 'code':
@@ -109,26 +109,27 @@ def original_tests(root, device):
     return rows
 
 
-def lifecycle_tests():
+def lifecycle_tests(device='cpu', dtype=torch.float32):
     cases = []
     for size in (4, 16, 32):
         for n in (size-1, size, size+1):
-            p = Pool(32, size, 8)
+            p = Pool(32, size, 8, device=device, dtype=dtype)
             a = Seq(p)
-            k, v = torch.randn(n, 8), torch.randn(n, 8)
+            k = torch.randn(n, 8, device=device, dtype=dtype)
+            v = torch.randn_like(k)
             for i in range(n):
                 a.append(k[i], v[i])
             b, c = a.fork(), a.fork()
             shared = len(a.table)
             assert sum(r > 0 for r in p.refs) == shared
             for index, seq in enumerate((a, b, c)):
-                token = torch.ones(8) * (index + 11)
+                token = torch.ones(8, device=device, dtype=dtype) * (index + 11)
                 seq.append(token, -token)
                 kr, vr = seq.read()
                 assert torch.equal(kr[:-1], k) and torch.equal(vr[:-1], v)
                 assert torch.equal(kr[-1], token) and torch.equal(vr[-1], -token)
             for index, seq in enumerate((a, b, c)):
-                assert torch.equal(seq.read()[0][-1], torch.ones(8)*(index+11))
+                assert torch.equal(seq.read()[0][-1], torch.ones(8, device=device, dtype=dtype)*(index+11))
             used = sum(r > 0 for r in p.refs)
             expected = shared + (3 if n % size == 0 else 2)
             assert used == expected
@@ -136,18 +137,18 @@ def lifecycle_tests():
             assert len(p.free) == 32 and len(set(p.free)) == 32 and sum(p.refs) == 0
             cases.append(dict(block_size=size, prefix_length=n, shared_blocks=shared,
                               after_branch_blocks=used, reclaimed_blocks=32))
-    p = Pool(1, 4, 8)
+    p = Pool(1, 4, 8, device=device, dtype=dtype)
     a = Seq(p)
-    a.append(torch.ones(8), torch.ones(8))
+    a.append(torch.ones(8, device=device, dtype=dtype), torch.ones(8, device=device, dtype=dtype))
     b = a.fork()
     try:
-        b.append(torch.zeros(8), torch.zeros(8))
+        b.append(torch.zeros(8, device=device, dtype=dtype), torch.zeros(8, device=device, dtype=dtype))
         raise AssertionError('expected OOM')
     except MemoryError:
         assert a.n == b.n == 1 and p.refs == [2] and a.table == b.table
     b.close(); a.close()
     assert len(p.free) == 1
-    return dict(branch_cases=cases, oom_atomicity=True)
+    return dict(device=str(device), dtype=str(dtype), branch_cases=cases, oom_atomicity=True)
 
 
 def allocation_trace():
@@ -198,12 +199,12 @@ def main():
     result = dict(environment=dict(python=platform.python_version(),
                                    torch=torch.__version__, cuda_build=torch.version.cuda,
                                    device=args.device), original_notebook=original_tests(root,args.device),
-                  extension_lifecycle=lifecycle_tests(), allocation_trace=allocation_trace())
+                  extension_lifecycle=lifecycle_tests(args.device), allocation_trace=allocation_trace())
     result['elapsed_seconds'] = time.time()-start
     result['status'] = 'passed'
     target = Path(args.output)
     target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(json.dumps(result, indent=2))
+    target.write_text(json.dumps(result, indent=2), encoding='utf-8')
     print(json.dumps(dict(status=result['status'], original_cases=len(result['original_notebook']),
                          max_abs_error=max(r['max_abs_error'] for r in result['original_notebook']),
                          lifecycle_cases=len(result['extension_lifecycle']['branch_cases']),

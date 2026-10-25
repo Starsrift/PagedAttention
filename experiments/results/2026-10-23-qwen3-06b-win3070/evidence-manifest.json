@@ -1,0 +1,33 @@
+{
+  "status": "verified",
+  "run_status": "passed",
+  "source_hashes_match": {
+    "experiments/SMALL_MODEL_PLAN.md": true,
+    "experiments/run_small_model.py": true,
+    "experiments/model_paged_cache.py": true,
+    "experiments/prepare_small_model.py": true,
+    "pyproject.toml": true,
+    "uv.lock": true,
+    "uv.ps1": true
+  },
+  "sha256": {
+    "experiments\\results\\2026-10-23-qwen3-06b-win3070\\experiment-model-manifest.json": "345efe943e972bdde6cd1182f4d0fc4d6fbddc40823f3a4fbefb65666ad1c167",
+    "experiments\\results\\2026-10-23-qwen3-06b-win3070\\packages.json": "c3515d93bbc9559bd339aef4be648670c4f014875b724edab10ffce8ed45339e",
+    "experiments\\results\\2026-10-23-qwen3-06b-win3070\\README.md": "e953875a056ba545583eb71c2c9daca05c54dc627ca5e61c904c7c35253671ef",
+    "experiments\\results\\2026-10-23-qwen3-06b-win3070\\result.json": "943b9e6c2542649447f7f07552236e6eac4dab3223ad46068ec48b02f8ce9774",
+    "experiments\\results\\2026-10-23-qwen3-06b-win3070\\run.log": "706b73aa12f470fb672ecab03ef0a7d2feff4636d4bb17c9a7a0c77edc63da39",
+    "experiments\\SMALL_MODEL_PLAN.md": "699d9e623b7df29225d304736b8e300f9baedbea5ae4a8004cdeffe3fc9085d5",
+    "experiments\\SMALL_MODEL_RESULTS.md": "ceef0c2cb41ec45d2e5d6c136eb3832468fd342dc5003862114b819c47d6b80d",
+    "experiments\\model_paged_cache.py": "302ce559016eecd40542fd13c1756671defa05590a7e968c94ca3fe809aba172",
+    "experiments\\run_small_model.py": "7fe08d921d0ac8e6eea22a805522bf03dd5495cd365fcafb70bef9897e89be40",
+    "experiments\\prepare_small_model.py": "dead9ff0c507291816f3fd13040952ed7e75cc5b4f92b9fd9c5586b91948657a"
+  },
+  "case_counts": {
+    "E1": 3,
+    "E2": 15,
+    "E3": 9,
+    "E4": 9,
+    "E5": 6
+  },
+  "model_revision": "c1899de289a04d12100db370d81485cdf75e47ca"
+}

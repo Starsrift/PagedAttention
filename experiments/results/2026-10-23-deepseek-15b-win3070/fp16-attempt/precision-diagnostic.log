@@ -1,0 +1,2 @@
+{"dtype": "float16", "logits_finite": false, "first_nonfinite_module": {"module": "layer_0.attention", "finite": false, "max_abs": null}}
+{"dtype": "bfloat16", "logits_finite": true, "first_nonfinite_module": null}

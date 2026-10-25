@@ -1,0 +1,602 @@
+{
+  "scope": "ordinary DynamicCache prefill only, no paged adapter",
+  "prompt_token_ids": [
+    [
+      151646,
+      151644,
+      11622,
+      105321,
+      104136,
+      106582,
+      60949,
+      25511,
+      99982,
+      24360,
+      1773,
+      151645,
+      151648,
+      198
+    ]
+  ],
+  "bf16_supported": true,
+  "runs": {
+    "float16": {
+      "nonfinite_weight_names": [],
+      "logits_finite": false,
+      "first_nonfinite_module": {
+        "module": "layer_0.attention",
+        "finite": false,
+        "max_abs": null
+      },
+      "activation_checks": [
+        {
+          "module": "layer_0.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_0.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_1.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_1.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_2.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_2.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_3.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_3.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_4.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_4.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_5.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_5.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_6.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_6.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_7.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_7.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_8.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_8.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_9.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_9.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_10.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_10.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_11.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_11.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_12.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_12.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_13.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_13.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_14.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_14.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_15.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_15.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_16.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_16.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_17.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_17.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_18.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_18.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_19.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_19.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_20.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_20.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_21.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_21.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_22.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_22.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_23.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_23.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_24.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_24.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_25.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_25.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_26.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_26.mlp",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_27.attention",
+          "finite": false,
+          "max_abs": null
+        },
+        {
+          "module": "layer_27.mlp",
+          "finite": false,
+          "max_abs": null
+        }
+      ]
+    },
+    "bfloat16": {
+      "nonfinite_weight_names": [],
+      "logits_finite": true,
+      "first_nonfinite_module": null,
+      "activation_checks": [
+        {
+          "module": "layer_0.attention",
+          "finite": true,
+          "max_abs": 7.75
+        },
+        {
+          "module": "layer_0.mlp",
+          "finite": true,
+          "max_abs": 11.625
+        },
+        {
+          "module": "layer_1.attention",
+          "finite": true,
+          "max_abs": 6.25
+        },
+        {
+          "module": "layer_1.mlp",
+          "finite": true,
+          "max_abs": 776.0
+        },
+        {
+          "module": "layer_2.attention",
+          "finite": true,
+          "max_abs": 4.28125
+        },
+        {
+          "module": "layer_2.mlp",
+          "finite": true,
+          "max_abs": 2896.0
+        },
+        {
+          "module": "layer_3.attention",
+          "finite": true,
+          "max_abs": 3.484375
+        },
+        {
+          "module": "layer_3.mlp",
+          "finite": true,
+          "max_abs": 12.0
+        },
+        {
+          "module": "layer_4.attention",
+          "finite": true,
+          "max_abs": 3.0625
+        },
+        {
+          "module": "layer_4.mlp",
+          "finite": true,
+          "max_abs": 58.5
+        },
+        {
+          "module": "layer_5.attention",
+          "finite": true,
+          "max_abs": 6.28125
+        },
+        {
+          "module": "layer_5.mlp",
+          "finite": true,
+          "max_abs": 10.1875
+        },
+        {
+          "module": "layer_6.attention",
+          "finite": true,
+          "max_abs": 3.890625
+        },
+        {
+          "module": "layer_6.mlp",
+          "finite": true,
+          "max_abs": 22.125
+        },
+        {
+          "module": "layer_7.attention",
+          "finite": true,
+          "max_abs": 10.9375
+        },
+        {
+          "module": "layer_7.mlp",
+          "finite": true,
+          "max_abs": 26.375
+        },
+        {
+          "module": "layer_8.attention",
+          "finite": true,
+          "max_abs": 5.71875
+        },
+        {
+          "module": "layer_8.mlp",
+          "finite": true,
+          "max_abs": 35.25
+        },
+        {
+          "module": "layer_9.attention",
+          "finite": true,
+          "max_abs": 11.375
+        },
+        {
+          "module": "layer_9.mlp",
+          "finite": true,
+          "max_abs": 31.5
+        },
+        {
+          "module": "layer_10.attention",
+          "finite": true,
+          "max_abs": 13.8125
+        },
+        {
+          "module": "layer_10.mlp",
+          "finite": true,
+          "max_abs": 35.75
+        },
+        {
+          "module": "layer_11.attention",
+          "finite": true,
+          "max_abs": 21.875
+        },
+        {
+          "module": "layer_11.mlp",
+          "finite": true,
+          "max_abs": 40.75
+        },
+        {
+          "module": "layer_12.attention",
+          "finite": true,
+          "max_abs": 12.8125
+        },
+        {
+          "module": "layer_12.mlp",
+          "finite": true,
+          "max_abs": 26.875
+        },
+        {
+          "module": "layer_13.attention",
+          "finite": true,
+          "max_abs": 9.9375
+        },
+        {
+          "module": "layer_13.mlp",
+          "finite": true,
+          "max_abs": 27.5
+        },
+        {
+          "module": "layer_14.attention",
+          "finite": true,
+          "max_abs": 9.6875
+        },
+        {
+          "module": "layer_14.mlp",
+          "finite": true,
+          "max_abs": 21.125
+        },
+        {
+          "module": "layer_15.attention",
+          "finite": true,
+          "max_abs": 15.0
+        },
+        {
+          "module": "layer_15.mlp",
+          "finite": true,
+          "max_abs": 23.75
+        },
+        {
+          "module": "layer_16.attention",
+          "finite": true,
+          "max_abs": 17.5
+        },
+        {
+          "module": "layer_16.mlp",
+          "finite": true,
+          "max_abs": 17.25
+        },
+        {
+          "module": "layer_17.attention",
+          "finite": true,
+          "max_abs": 10.875
+        },
+        {
+          "module": "layer_17.mlp",
+          "finite": true,
+          "max_abs": 13.0625
+        },
+        {
+          "module": "layer_18.attention",
+          "finite": true,
+          "max_abs": 6.1875
+        },
+        {
+          "module": "layer_18.mlp",
+          "finite": true,
+          "max_abs": 15.8125
+        },
+        {
+          "module": "layer_19.attention",
+          "finite": true,
+          "max_abs": 7.125
+        },
+        {
+          "module": "layer_19.mlp",
+          "finite": true,
+          "max_abs": 30.25
+        },
+        {
+          "module": "layer_20.attention",
+          "finite": true,
+          "max_abs": 16.75
+        },
+        {
+          "module": "layer_20.mlp",
+          "finite": true,
+          "max_abs": 22.0
+        },
+        {
+          "module": "layer_21.attention",
+          "finite": true,
+          "max_abs": 11.5625
+        },
+        {
+          "module": "layer_21.mlp",
+          "finite": true,
+          "max_abs": 49.0
+        },
+        {
+          "module": "layer_22.attention",
+          "finite": true,
+          "max_abs": 20.5
+        },
+        {
+          "module": "layer_22.mlp",
+          "finite": true,
+          "max_abs": 39.75
+        },
+        {
+          "module": "layer_23.attention",
+          "finite": true,
+          "max_abs": 8.75
+        },
+        {
+          "module": "layer_23.mlp",
+          "finite": true,
+          "max_abs": 45.75
+        },
+        {
+          "module": "layer_24.attention",
+          "finite": true,
+          "max_abs": 6.4375
+        },
+        {
+          "module": "layer_24.mlp",
+          "finite": true,
+          "max_abs": 75.5
+        },
+        {
+          "module": "layer_25.attention",
+          "finite": true,
+          "max_abs": 27.375
+        },
+        {
+          "module": "layer_25.mlp",
+          "finite": true,
+          "max_abs": 237.0
+        },
+        {
+          "module": "layer_26.attention",
+          "finite": true,
+          "max_abs": 11.375
+        },
+        {
+          "module": "layer_26.mlp",
+          "finite": true,
+          "max_abs": 1304.0
+        },
+        {
+          "module": "layer_27.attention",
+          "finite": true,
+          "max_abs": 55.5
+        },
+        {
+          "module": "layer_27.mlp",
+          "finite": true,
+          "max_abs": 2272.0
+        }
+      ]
+    }
+  }
+}
